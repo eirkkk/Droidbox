@@ -22,6 +22,7 @@ wget https://raw.githubusercontent.com/eirkkk/Mesa_turnip_termux/main/ubuntu
 chmod +x start-ubuntu
 chmod +x ubuntu
 cp -r start-ubuntu ubuntu /data/data/com.termux/files/usr/bin
+rm -rf ubuntu start-ubuntu
 ```
 
 4. بعد الانتهاء من تثبيت Ubuntu، قم بتشغيل الأمر التالي لبدء Ubuntu:
@@ -31,6 +32,8 @@ ubuntu --start
 
 5. بعد تشغيل Ubuntu، قم بإدخال الأوامر التالية واحدة تلو الأخرى واضغط على "Enter" بعد كل سطر:
 ```bash
+apt update
+apt install git wget
 git clone https://github.com/eirkkk/Mesa_turnip_termux
 cp -r /root/Mesa_turnip_termux/build_deb_mesa.sh /root
 bash build_deb_mesa.sh
