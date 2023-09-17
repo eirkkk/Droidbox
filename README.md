@@ -60,17 +60,17 @@ https://raw.githubusercontent.com/eirkkk/Mesa_turnip_termux/main/app-arm64-v8a-d
 لتشغيل محاكي ويندوز Box86 و Box64 على تيرمكس، يمكنك اتباع الخطوات التالية:
 
 الخطوة رقم 1: افتح تطبيق Termux وأدخل الأمر التالي:
-```
+```bash
 ubuntu --start
 ```
 
 الخطوة رقم 2: قم بتثبيت المحاكي عن طريق إدخال الأمر التالي:
-```
+```bash
 wget https://raw.githubusercontent.com/eirkkk/Mesa_turnip_termux/main/box.sh && bash box.sh && rm box.sh
 ```
 
 الخطوة رقم 3: لتشغيل سطح المكتب لمحاكي ويندوز، قم بإدخال الأمر التالي:
-```
+```bash
 box64 wine explorer /desktop=shell,800x600 explorer
 ```
 
