@@ -51,7 +51,6 @@ dpkg -i mesa-vulkan-kgsl_23.3.0-devel-*_arm64.deb
 https://raw.githubusercontent.com/eirkkk/Mesa_turnip_termux/main/app-arm64-v8a-debug.apk
 ```
 
-```
 
 هذه هي الخطوات المرتبة لتثبيت تعريفات Mesa وتثبيت برنامج عرض الروسميات على هاتفك الذكي باستخدام Termux. يجب عليك اتباعها بالترتيب المذكور للحصول على النتائج المطلوبة.
 
