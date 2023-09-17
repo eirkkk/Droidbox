@@ -7,7 +7,7 @@ pkg upgrade
 pkg install x11-repo
 pkg install proot-distro proot
 pkg install termux-x11-nightly
-pkg install wget git
+pkg install wget git pulseaudio
 proot-distro install ubuntu
 ```
 
