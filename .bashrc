@@ -114,7 +114,6 @@ export vblank_mode=0
 #export __GL_SHADER_DISK_CACHE_SKIP_CLEANUP=1
 export VKD3D_SHADER_CACHE_PATH=0
 export DXVK_HUD=fps,version,devinfo,gpuload
-export DXVK_CONFIG_FILE="/opt/DXVK_D8VK.conf"
 export BOX64_BASH="/opt/box64_bash"
 export BOX64_ALLOWMISSINGLIBS=1
 export BOX86_BASH="/opt/box86_bash"
@@ -122,8 +121,6 @@ export BOX86_ALLOWMISSINGLIBS=1
 export ZINK_CONTEXT_THREADED=true
 export MESA_SHADER_CACHE_DISABLE=false
 export MESA_SHADER_CACHE_MAX_SIZE=512MB
-export DXVK_ASYNC=1
-export MESA_VK_WSI_DEBUG=ws
 ## Wine environment variables settings
 #. /opt/Scripts/start
 export WINEDEBUG=-all
