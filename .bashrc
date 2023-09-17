@@ -102,29 +102,16 @@ export DISPLAY=:0
 export PULSE_SERVER=127.0.0.1
 export MESA_LOADER_DRIVER_OVERRIDE=zink
 export GALLIUM_HUD=simple,fps
-export ZINK_DESCRIPTORS=lazy
-export ZINK_DEBUG=compact
 export ENABLE_GAMESCOPE_WSI=1
-export DXVK_HUD=1
 export MESA_VK_WSI_PRESENT_MODE=immediate
 export USE_HEAP=1
 export vblank_mode=0
-#export VK_INSTANCE_LAYERS=VK_LAYER_KHRONOS_validation
-#export RADV_PERFTEST=gpl
-#export __GL_SHADER_DISK_CACHE_SKIP_CLEANUP=1
-export VKD3D_SHADER_CACHE_PATH=0
 export DXVK_HUD=fps,version,devinfo,gpuload
+export DXVK_CONFIG_FILE="/opt/DXVK_D8VK.conf"
 export BOX64_BASH="/opt/box64_bash"
 export BOX64_ALLOWMISSINGLIBS=1
 export BOX86_BASH="/opt/box86_bash"
 export BOX86_ALLOWMISSINGLIBS=1
-export ZINK_CONTEXT_THREADED=true
-export MESA_SHADER_CACHE_DISABLE=false
-export MESA_SHADER_CACHE_MAX_SIZE=512MB
-## Wine environment variables settings
-#. /opt/Scripts/start
 export WINEDEBUG=-all
 export PATH="$PATH:/opt/wine/bin"
-export BOX86_DYNAREC=0
-export BOX64_DYNAREC=0
-export MESA_NO_ERROR=1
+
