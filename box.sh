@@ -4,7 +4,7 @@
 apt update
 
 # Install dependencies
-apt install -y git build-essential cmake wget gcc-arm-linux-gnueabihf zenity:armhf libasound*:armhf libstdc++6:armhf zenity
+apt install -y git build-essential cmake wget gcc-arm-linux-gnueabihf zenity:armhf libasound*:armhf libstdc++6:armhf 
 
 # Clone Box86 repository
 git clone https://github.com/ptitSeb/box86
