@@ -50,5 +50,5 @@ rm -rf /root/wine
 # Download and install 
 wget https://raw.githubusercontent.com/eirkkk/Mesa_turnip_termux/main/box64_bash
 wget https://raw.githubusercontent.com/eirkkk/Mesa_turnip_termux/main/box86_bash
-cp -r /root/box*_bash /opt
+chmod +x /root/box*_bash && cp -r /root/box*_bash /opt
 rm -rf /root/box*_bash
