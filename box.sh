@@ -53,3 +53,29 @@ wget https://raw.githubusercontent.com/eirkkk/Mesa_turnip_termux/main/box64_bash
 wget https://raw.githubusercontent.com/eirkkk/Mesa_turnip_termux/main/box86_bash
 chmod +x /root/box*_bash && cp -r /root/box*_bash /opt
 rm -rf /root/box*_bash
+
+# Download VulkanDriveBox.tar.xz
+wget https://github.com/eirkkk/Mesa_turnip_termux/releases/download/Eirkkk/VulkanDriveBox.tar.xz
+
+# Copy the downloaded file to /opt
+cp -r /root/VulkanDriveBox.tar.xz /opt
+
+# Navigate to /opt
+cd /opt
+
+# Extract the contents of VulkanDriveBox.tar.xz
+tar -xf /opt/VulkanDriveBox.tar.xz
+
+# Navigate to the 'box' directory
+cd /opt/box
+
+# Make all files executable
+chmod +x *
+
+# Copy the 'box' directory to /usr/local/bin
+cp -r box /usr/local/bin
+
+# Clean up by removing the downloaded file
+rm /opt/VulkanDriveBox.tar.xz
+
+echo "Installation completed."
