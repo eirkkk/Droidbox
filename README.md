@@ -32,6 +32,8 @@ ubuntu --start
 
 5. بعد تشغيل Ubuntu، قم بإدخال الأوامر التالية واحدة تلو الأخرى واضغط على "Enter" بعد كل سطر:
 ```bash
+apt update
+apt install git
 git clone https://github.com/eirkkk/Mesa_turnip_termux
 cp -r /root/Mesa_turnip_termux/build_deb_mesa.sh /root
 bash build_deb_mesa.sh
