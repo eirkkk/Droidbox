@@ -77,5 +77,5 @@ cp -r box /usr/local/bin
 
 # Clean up by removing the downloaded file
 rm /opt/VulkanDriveBox.tar.xz
-
+rm /root/VulkanDriveBox.tar.xz
 echo "Installation completed."
