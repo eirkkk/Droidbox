@@ -8,6 +8,7 @@ pkg install x11-repo
 pkg install proot-distro proot
 pkg install termux-x11-nightly
 pkg install wget git pulseaudio
+termux-setup-storage
 proot-distro install ubuntu
 ```
 
