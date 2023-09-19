@@ -28,9 +28,9 @@ cp /usr/include/libdrm/drm.h /usr/include/libdrm/drm_mode.h /usr/include/
 
 # Download mesa
 BUILD_PREFIX=~/Desktop
-MESA_PREFIX=${BUILD_PREFIX}/mesa-turnip-feature-a7xx-basic-support
+MESA_PREFIX=${BUILD_PREFIX}/mesa-23.2.0-rc3
 
-wget --continue --directory-prefix ${BUILD_PREFIX}  https://gitlab.freedesktop.org/Danil/mesa/-/archive/turnip/feature/a7xx-basic-support/mesa-turnip-feature-a7xx-basic-support.tar.gz
+wget --continue --directory-prefix ${BUILD_PREFIX}  https://archive.mesa3d.org/mesa-23.2.0-rc3.tar.xz
 tar -xf ${BUILD_PREFIX}/*.tar.gz --directory ${BUILD_PREFIX}
 
 # Set env var
@@ -57,8 +57,8 @@ cpu_family = 'arm'
 cpu = 'armv7l'
 endian = 'little'
 " > ${MESA_PREFIX}/arm.txt
-cp -r /root/Mesa_turnip_termux/wsi-termux-x11-v3.patch /root/Desktop/mesa-turnip-feature-a7xx-basic-support
-cp -r /root/Mesa_turnip_termux/wsi_common_x11.c /root/Desktop/mesa-turnip-feature-a7xx-basic-support
+cp -r /root/Mesa_turnip_termux/wsi-termux-x11-v3.patch /root/Desktop/mesa-23.2.0-rc3
+cp -r /root/Mesa_turnip_termux/wsi_common_x11.c /root/Desktop/mesa-23.2.0-rc3
 
 
 # Build mesa 
