@@ -78,4 +78,9 @@ cp -r box /usr/local/bin
 # Clean up by removing the downloaded file
 rm /opt/VulkanDriveBox.tar.xz
 rm /root/VulkanDriveBox.tar.xz
+cd ~/
+wget https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
+chmod +x winetricks
+mv winetricks /usr/local/bin/
+rm -rf /root/winetricks
 echo "Installation completed."
