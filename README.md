@@ -45,8 +45,8 @@ cp -r /root/Mesa_turnip_termux/.bashrc /root
 6. بعد الأ نتهاء من التثبيت ستكون هناك حزمتين في مجلد Desktop قم بدخول الى مجلد Desktop لتثبيت التعريفات:
 ```bash 
 cd /root/Desktop
-dpkg -i mesa-vulkan-kgsl_23.3.0-devel-*_armhf.deb
-dpkg -i mesa-vulkan-kgsl_23.3.0-devel-*_arm64.deb
+dpkg -i mesa-vulkan-kgsl*armhf.deb
+dpkg -i mesa-vulkan-kgsl*arm64.deb
 ```
 
 7. هاذي الخطوة لتثبيت برنامج عرض الرسوميات على هاتفك الاندرويد:
