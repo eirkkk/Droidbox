@@ -30,8 +30,35 @@ rm -rf start-ubuntu ubuntu
 ```bash
 ubuntu --start
 ```
+5.بعد تشغل ubuntu ضع الرابط لتثبيت box64 box86 مع التعريفات بدون اخذ الكثير من مساحة الجهاز
+```bash
+wget https://raw.githubusercontent.com/eirkkk/Mesa_turnip_termux/main/box.sh && bash box.sh && rm box.sh
+```
 
-5. بعد تشغيل Ubuntu، قم بإدخال الأوامر التالية واحدة تلو الأخرى واضغط على "Enter" بعد كل سطر:
+6. هاذي الخطوة لتثبيت برنامج عرض الرسوميات على هاتفك الاندرويد:
+```bash
+https://raw.githubusercontent.com/eirkkk/Mesa_turnip_termux/main/app-arm64-v8a-debug.apk
+```
+
+7.بعد الانتهاء من تثبيت البرنامج على الهاتف عد الى تطبيق Termux ادخل الامر  :
+```bash
+ubuntu --start
+```
+.ثم بعد فتح الواجه ادخل هاذا الامر :
+
+```bash
+box 
+````
+بعد ادخال الامر box ستظهر لك ثلاث خيارات :
+```bash
+1) Run Wine. امر التشغيل مع اختيار مقاس الشاشه
+2) Fix Wine.  امر ضبط المصنع للمحاكي 
+3) Change Wine Version.  امر تغير اصدار المحاكي
+0) Exit.  امر الخروج
+   ````
+
+
+8. اذا كنت ترغب بصناعه تعريفات خاصه بك ادخل هاذا الامر :
 ```bash
 apt update
 apt install git
@@ -42,43 +69,15 @@ rm -rt /root/.bashrc
 cp -r /root/Mesa_turnip_termux/.bashrc /root
 ```
  
-6. بعد الأ نتهاء من التثبيت ستكون هناك حزمتين في مجلد Desktop قم بدخول الى مجلد Desktop لتثبيت التعريفات:
+9. بعد الأ نتهاء من التثبيت ستكون هناك حزمتين في مجلد Desktop قم بدخول الى مجلد Desktop لتثبيت التعريفات:
 ```bash 
 cd /root/Desktop
 dpkg -i mesa-vulkan-kgsl*armhf.deb
 dpkg -i mesa-vulkan-kgsl*arm64.deb
 ```
 
-7. هاذي الخطوة لتثبيت برنامج عرض الرسوميات على هاتفك الاندرويد:
-```bash
-https://raw.githubusercontent.com/eirkkk/Mesa_turnip_termux/main/app-arm64-v8a-debug.apk
-```
-
-
 هذه هي الخطوات المرتبة لتثبيت تعريفات Mesa وتثبيت برنامج عرض الروسميات على هاتفك الذكي باستخدام Termux. يجب عليك اتباعها بالترتيب المذكور للحصول على النتائج المطلوبة.
 
 إذا كان لديك أي أسئلة أخرى، فلا تتردد في طرحها.
 
-لتشغيل محاكي ويندوز Box86 و Box64 على تيرمكس، يمكنك اتباع الخطوات التالية:
-
-الخطوة رقم 1: افتح تطبيق Termux وأدخل الأمر التالي:
-```bash
-ubuntu --start
-```
-
-الخطوة رقم 2: قم بتثبيت المحاكي عن طريق إدخال الأمر التالي:
-```bash
-wget https://raw.githubusercontent.com/eirkkk/Mesa_turnip_termux/main/box.sh && bash box.sh && rm box.sh
-```
-
-بعد الانتهاء ادخل الامر 
-```bash
-box 
-````
-بعد ادخال الامر box ستظهر لك ثلاث خيارات 
-1) Run Wine. امر التشغيل مع اختيار مقاس الشاشه
-2) Fix Wine.  امر ضبط المصنع للمحاكي 
-3) Change Wine Version.  امر تغير اصدار المحاكي
-0) Exit.  امر الخروج
-   
 بعد ذلك، يجب أن يتم تشغيل سطح المكتب لمحاكي ويندوز Box86 و Box64 على جهازك الذي يعمل بنظام Termux. يُرجى ملاحظة أن هذه الإجراءات قد تتطلب وقتًا واستخدامًا مكثفًا للموارد، وقد يكون هناك متطلبات إضافية لتشغيل تطبيقات ويندوز على هذا المحاكي.
