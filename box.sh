@@ -72,6 +72,8 @@ chmod +x *
 cp -r box /usr/local/bin
 
 # Clean up by removing the downloaded file
+apt remove mesa-vulkan-drivers:armhf
+apt remove mesa-vulkan-drivers:arm64
 rm /opt/VulkanDriveBox.tar.xz
 rm /root/VulkanDriveBox.tar.xz
 cd ~/
@@ -85,4 +87,5 @@ dpkg -i mesa-vulkan-kgsl_23.2.0-rc3*arm64.deb
 dpkg -i mesa-vulkan-kgsl_23.2.0-rc3*armhf.deb
 rm mesa-vulkan-kgsl_23.2.0-rc3*arm64.deb mesa-vulkan-kgsl_23.2.0-rc3*armhf.deb
 rm -rf /root/.bashrc && wget https://raw.githubusercontent.com/eirkkk/Mesa_turnip_termux/main/.bashrc
+. /opt/box/fix
 echo "Installation completed."
