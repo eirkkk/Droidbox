@@ -1,5 +1,19 @@
 #!/bin/bash
+echo "
+deb http://ports.ubuntu.com/ubuntu-ports mantic main restricted universe multiverse
+deb-src http://ports.ubuntu.com/ubuntu-ports mantic main restricted universe multiverse
 
+deb http://ports.ubuntu.com/ubuntu-ports mantic-updates main restricted universe multiverse
+deb-src http://ports.ubuntu.com/ubuntu-ports jammy-updates main restricted universe multiverse
+
+deb http://ports.ubuntu.com/ubuntu-ports mantic-backports main restricted universe multiverse
+deb-src http://ports.ubuntu.com/ubuntu-ports mantic-backports main restricted universe multiverse
+
+deb http://ports.ubuntu.com/ubuntu-ports mantic-security main restricted universe multiverse
+deb-src http://ports.ubuntu.com/ubuntu-ports mantic-security main restricted universe multiverse
+" > /etc/apt/sources.list
+
+dpkg --add-architecture armhf
 # Update package manager
 apt update
 
