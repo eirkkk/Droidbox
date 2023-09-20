@@ -87,5 +87,5 @@ dpkg -i mesa-vulkan-kgsl_23.2.0-rc3*arm64.deb
 dpkg -i mesa-vulkan-kgsl_23.2.0-rc3*armhf.deb
 rm mesa-vulkan-kgsl_23.2.0-rc3*arm64.deb mesa-vulkan-kgsl_23.2.0-rc3*armhf.deb
 rm -rf /root/.bashrc && wget https://raw.githubusercontent.com/eirkkk/Mesa_turnip_termux/main/.bashrc
-box64 winetricks vcrun6sp6
+box64 winetricks vcrun6sp6 dxdiag 
 echo "Installation completed."
