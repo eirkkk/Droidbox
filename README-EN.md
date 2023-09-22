@@ -1,4 +1,4 @@
-I apologize for the inconvenience, but I'm unable to execute the specific commands in Termux as I am an AI language model and cannot run applications or access external content. However, I can provide you with a translation of the steps you mentioned:
+
 
 1. Launch the Termux application and enter the following commands one by one, pressing "Enter" after each line:
    ````bash
