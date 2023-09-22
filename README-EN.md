@@ -1,7 +1,7 @@
 
 
 1. Launch the Termux application and enter the following commands one by one, pressing "Enter" after each line:
-   ````bash
+   ```bash
    pkg up
    pkg upgrade
    pkg install x11-repo
@@ -13,13 +13,13 @@
    ```
 
 2. Download the script files (start-ubuntu and ubuntu) from the following links using the wget command:
-   ````bash
+   ```bash
    wget https://raw.githubusercontent.com/eirkkk/Mesa_turnip_termux/main/start-ubuntu
    wget https://raw.githubusercontent.com/eirkkk/Mesa_turnip_termux/main/ubuntu
    ```
 
 3. After downloading the files, execute the following commands in Termux:
-   ````bash
+   ```bash
    chmod +x start-ubuntu
    chmod +x ubuntu
    cp -r start-ubuntu ubuntu /data/data/com.termux/files/usr/bin
@@ -27,30 +27,30 @@
    ```
 
 4. Once Ubuntu is installed, run the following command to start Ubuntu:
-   ````bash
+   ```bash
    ubuntu --start
    ```
 
 5. After launching Ubuntu, enter the following command to install box64, box86, and their drivers without taking up much space on the device:
-   ````bash
+   ```bash
    apt update && apt install wget && wget https://raw.githubusercontent.com/eirkkk/Mesa_turnip_termux/main/box.sh && bash box.sh && rm box.sh
    ```
 
 6. This step is for installing the graphics display program on your Android phone:
-   ````bash
+   ```bash
    https://raw.githubusercontent.com/eirkkk/Mesa_turnip_termux/main/app-arm64-v8a-debug.apk
    ```
 
 7. After installing the program on your phone, return to the Termux application and enter the command:
-   ````bash
+   ```bash
    ubuntu --start
    ```
    Then, after opening the interface, enter the following command:
-   ````bash
+   ```bash
    box
    ```
    After entering the "box" command, you will see three options. Choose option number 2 to complete the driver installation:
-   ````bash
+   ```bash
    1) Run Wine. Run command with screen size selection.
    2) Fix Wine. Factory reset command for the emulator.
    3) Change Wine Version. Command to change the emulator version.
@@ -58,7 +58,7 @@
    ```
 
 8. If you want to create your own drivers, enter the following command:
-   ````bash
+   ```bash
    apt update
    apt install git
    git clone https://github.com/eirkkk/Mesa_turnip_termux
@@ -69,7 +69,7 @@
    ```
 
 9. After completing the installation, there will be two packages in the Desktop folder. Go to the Desktop folder to install the drivers:
-   ````bash
+   ```bash
    cd /root/Desktop
    dpkg -i mesa-vulkan-kgsl*armhf.deb
    dpkg -i mesa-vulkan-kgsl*arm64.deb
