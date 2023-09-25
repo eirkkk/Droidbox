@@ -16,15 +16,12 @@ proot-distro install ubuntu
 ```bash
 wget https://raw.githubusercontent.com/eirkkk/Mesa_turnip_termux/main/start-ubuntu
 wget https://raw.githubusercontent.com/eirkkk/Mesa_turnip_termux/main/ubuntu
-```
-
-3. بعد تنزيل الملفين، قم بتنفيذ الأوامر التالية في Termux:
-```bash
-chmod +x start-ubuntu
-chmod +x ubuntu
+chmod +x start-ubuntu && chmod +x ubuntu
 cp -r start-ubuntu ubuntu /data/data/com.termux/files/usr/bin
 rm -rf start-ubuntu ubuntu
 ```
+
+3. بعد تنزيل الملفين، قم بتنفيذ الأوامر التالية في Termux:
 
 4. بعد الانتهاء من تثبيت Ubuntu، قم بتشغيل الأمر التالي لبدء Ubuntu:
 ```bash
@@ -60,13 +57,11 @@ box
 
 8. اذا كنت ترغب بصناعه تعريفات خاصه بك ادخل هاذا الامر :
 ```bash
+cd /root
 apt update
-apt install git
-git clone https://github.com/eirkkk/Mesa_turnip_termux
-cp -r /root/Mesa_turnip_termux/build_deb_mesa.sh /root
+apt install wget
+wget https://raw.githubusercontent.com/eirkkk/Mesa_turnip_termux/main/build_deb_mesa.sh
 bash build_deb_mesa.sh
-rm -rt /root/.bashrc
-cp -r /root/Mesa_turnip_termux/.bashrc /root
 ```
  
 9. بعد الأ نتهاء من التثبيت ستكون هناك حزمتين في مجلد Desktop قم بدخول الى مجلد Desktop لتثبيت التعريفات:
