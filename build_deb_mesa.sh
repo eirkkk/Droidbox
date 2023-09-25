@@ -28,10 +28,10 @@ cp /usr/include/libdrm/drm.h /usr/include/libdrm/drm_mode.h /usr/include/
 
 # Download mesa
 BUILD_PREFIX=~/Desktop
-MESA_PREFIX=${BUILD_PREFIX}/mesa-23.2.0-rc3
+MESA_PREFIX=${BUILD_PREFIX}/mesa-23.2.0-rc4
 
-wget --continue --directory-prefix ${BUILD_PREFIX}  https://archive.mesa3d.org/mesa-23.2.0-rc3.tar.xz
-tar -xf ${BUILD_PREFIX}/*.tar.gz --directory ${BUILD_PREFIX}
+wget --continue --directory-prefix ${BUILD_PREFIX}  https://archive.mesa3d.org/mesa-23.2.0-rc4.tar.xz
+tar -xf ${BUILD_PREFIX}/*.tar.xz --directory ${BUILD_PREFIX}
 
 # Set env var
 
@@ -57,15 +57,18 @@ cpu_family = 'arm'
 cpu = 'armv7l'
 endian = 'little'
 " > ${MESA_PREFIX}/arm.txt
-cp -r /root/Mesa_turnip_termux/wsi-termux-x11-v3.patch /root/Desktop/mesa-23.2.0-rc3
-cp -r /root/Mesa_turnip_termux/wsi_common_x11.c /root/Desktop/mesa-23.2.0-rc3
+cp -r /root/Mesa_turnip_termux/wsi-termux-x11-v3.patch /root/Desktop/mesa-23.2.0-rc4
+cp -r /root/Mesa_turnip_termux/wsi_common_x11.c /root/Desktop/mesa-23.2.0-rc4
 
 
 # Build mesa 
 cd ${MESA_PREFIX}
+wget https://raw.githubusercontent.com/eirkkk/Mesa_turnip_termux/main/wsi-termux-x11-v3.patch
+wget https://raw.githubusercontent.com/eirkkk/Mesa_turnip_termux/main/wsi_common_x11.c
 git apply -v wsi-termux-x11-v3.patch
 rm -rf src/vulkan/wsi/wsi_common_x11.c
 cp -r wsi_common_x11.c src/vulkan/wsi/
+rm wsi-termux-x11-v3.patch
 
 meson build64/ --prefix /usr --libdir lib/aarch64-linux-gnu/ -D platforms=x11,wayland -D gallium-drivers=freedreno -D vulkan-drivers=freedreno -D freedreno-kmds=msm,kgsl -D dri3=enabled -D buildtype=release -D glx=disabled -D egl=disabled -D gles1=disabled -D gles2=disabled -D gallium-xa=disabled -D opengl=false -D shared-glapi=false -D b_lto=true -D b_ndebug=true -D cpp_rtti=false -D gbm=disabled -D llvm=disabled -D shared-llvm=disabled -D xmlconfig=disabled
 meson compile -C build64/
@@ -98,7 +101,6 @@ rm mesa-vulkan-drivers_*_armhf.deb
 rm ${MESA_32}/DEBIAN/md5sums ${MESA_32}/DEBIAN/triggers
 rm -rf ${MESA_32}/usr/share/drirc.d
 dpkg-deb --build --root-owner-group ${MESA_32}
-
 
 
 
