@@ -95,7 +95,7 @@ echo 'export ENABLE_GAMESCOPE_WSI=1' >> ~/.bashrc
 echo 'export MESA_VK_WSI_PRESENT_MODE=immediate' >> ~/.bashrc
 echo 'export USE_HEAP=1' >> ~/.bashrc
 echo 'export vblank_mode=0' >> ~/.bashrc
-echo 'export DXVK_HUD=fps,version,devinfo,gpuload' >> ~/.bashrc
+echo 'export DXVK_HUD=api,fps,version,devinfo,gpuload' >> ~/.bashrc
 echo 'export DXVK_CONFIG_FILE="/opt/DXVK_D8VK.conf"' >> ~/.bashrc
 echo 'export BOX64_BASH="/opt/box64_bash"' >> ~/.bashrc
 echo 'export BOX64_ALLOWMISSINGLIBS=1' >> ~/.bashrc
@@ -103,9 +103,9 @@ echo 'export BOX86_BASH="/opt/box86_bash"' >> ~/.bashrc
 echo 'export BOX86_ALLOWMISSINGLIBS=1' >> ~/.bashrc
 echo 'export WINEDEBUG=-all' >> ~/.bashrc
 echo 'export PATH="$PATH:/opt/wine/bin"' >> ~/.bashrc
-echo 'export PATH="MESA_NO_ERROR=1"' >> ~/.bashrc
-echo 'export PATH="DXVK_ASYNC=1"' >> ~/.bashrc
-echo 'export PATH="ZINK_DESCRIPTORS=lazy"' >> ~/.bashrc
-echo 'export PATH="ZINK_DEBUG=compact"' >> ~/.bashrc
+echo 'export MESA_NO_ERROR=1' >> ~/.bashrc
+echo 'export DXVK_ASYNC=1' >> ~/.bashrc
+echo 'export ZINK_DESCRIPTORS=lazy' >> ~/.bashrc
+echo 'export ZINK_DEBUG=compact' >> ~/.bashrc
 source ~/.bashrc
 echo "Installation completed."
