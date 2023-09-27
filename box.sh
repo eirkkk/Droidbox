@@ -72,8 +72,8 @@ chmod +x *
 cp -r box /usr/local/bin
 
 # Clean up by removing the downloaded file
-apt remove mesa-vulkan-drivers:armhf
-apt remove mesa-vulkan-drivers:arm64
+apt remove mesa-vulkan-drivers:armhf -y
+apt remove mesa-vulkan-drivers:arm64 -y
 rm /opt/VulkanDriveBox.tar.xz
 rm /root/VulkanDriveBox.tar.xz
 cd ~/
