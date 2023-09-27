@@ -103,5 +103,9 @@ echo 'export BOX86_BASH="/opt/box86_bash"' >> ~/.bashrc
 echo 'export BOX86_ALLOWMISSINGLIBS=1' >> ~/.bashrc
 echo 'export WINEDEBUG=-all' >> ~/.bashrc
 echo 'export PATH="$PATH:/opt/wine/bin"' >> ~/.bashrc
+echo 'export PATH="MESA_NO_ERROR=1"' >> ~/.bashrc
+echo 'export PATH="DXVK_ASYNC=1"' >> ~/.bashrc
+echo 'export PATH="ZINK_DESCRIPTORS=lazy"' >> ~/.bashrc
+echo 'export PATH="ZINK_DEBUG=compact"' >> ~/.bashrc
 source ~/.bashrc
 echo "Installation completed."
