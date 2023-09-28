@@ -2,20 +2,6 @@
 
 # Preparing
 
-echo "
-deb http://ports.ubuntu.com/ubuntu-ports mantic main restricted universe multiverse
-deb-src http://ports.ubuntu.com/ubuntu-ports mantic main restricted universe multiverse
-
-deb http://ports.ubuntu.com/ubuntu-ports mantic-updates main restricted universe multiverse
-deb-src http://ports.ubuntu.com/ubuntu-ports mantic-updates main restricted universe multiverse
-
-deb http://ports.ubuntu.com/ubuntu-ports mantic-backports main restricted universe multiverse
-deb-src http://ports.ubuntu.com/ubuntu-ports mantic-backports main restricted universe multiverse
-
-deb http://ports.ubuntu.com/ubuntu-ports mantic-security main restricted universe multiverse
-deb-src http://ports.ubuntu.com/ubuntu-ports mantic-security main restricted universe multiverse
-" > /etc/apt/sources.list
-
 echo 'export DISPLAY=:0' >> ~/.bashrc
 echo 'export PULSE_SERVER=127.0.0.1' >> ~/.bashrc
 echo 'export MESA_LOADER_DRIVER_OVERRIDE=zink' >> ~/.bashrc
@@ -24,15 +10,6 @@ echo 'export ENABLE_GAMESCOPE_WSI=1' >> ~/.bashrc
 echo 'export MESA_VK_WSI_PRESENT_MODE=immediate' >> ~/.bashrc
 echo 'export USE_HEAP=1' >> ~/.bashrc
 echo 'export vblank_mode=0' >> ~/.bashrc
-echo 'export DXVK_HUD=fps,version,devinfo,gpuload' >> ~/.bashrc
-echo 'export DXVK_CONFIG_FILE="/opt/DXVK_D8VK.conf"' >> ~/.bashrc
-echo 'export BOX64_BASH="/opt/box64_bash"' >> ~/.bashrc
-echo 'export BOX64_ALLOWMISSINGLIBS=1' >> ~/.bashrc
-echo 'export BOX86_BASH="/opt/box86_bash"' >> ~/.bashrc
-echo 'export BOX86_ALLOWMISSINGLIBS=1' >> ~/.bashrc
-echo 'export WINEDEBUG=-all' >> ~/.bashrc
-echo 'export PATH="$PATH:/opt/wine/bin"' >> ~/.bashrc
-
 
 dpkg --add-architecture armhf
 apt update
