@@ -107,5 +107,7 @@ echo 'export MESA_NO_ERROR=1' >> ~/.bashrc
 echo 'export DXVK_ASYNC=1' >> ~/.bashrc
 echo 'export ZINK_DESCRIPTORS=lazy' >> ~/.bashrc
 echo 'export ZINK_DEBUG=compact' >> ~/.bashrc
+echo 'export WINE_LARGE_ADDRESS_AWARE=0' >> ~/.bashrc
+echo 'export PROTON_FORCE_LARGE_ADDRESS_AWARE=0' >> ~/.bashrc
 source ~/.bashrc
 echo "Installation completed."
