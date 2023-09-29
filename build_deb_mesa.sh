@@ -1,20 +1,6 @@
 #!/bin/bash
 
 # Preparing
-echo "
-deb http://ports.ubuntu.com/ubuntu-ports mantic main restricted universe multiverse
-deb-src http://ports.ubuntu.com/ubuntu-ports mantic main restricted universe multiverse
- 
-deb http://ports.ubuntu.com/ubuntu-ports mantic-updates main restricted universe multiverse
-deb-src http://ports.ubuntu.com/ubuntu-ports mantic-updates main restricted universe multiverse
- 
-deb http://ports.ubuntu.com/ubuntu-ports mantic-backports main restricted universe multiverse
-deb-src http://ports.ubuntu.com/ubuntu-ports mantic-backports main restricted universe multiverse
- 
-deb http://ports.ubuntu.com/ubuntu-ports mantic-security main restricted universe multiverse
-deb-src http://ports.ubuntu.com/ubuntu-ports mantic-security main restricted universe multiverse
-" > /etc/apt/sources.list
-
 
 echo 'export DISPLAY=:0' >> ~/.bashrc
 echo 'export PULSE_SERVER=127.0.0.1' >> ~/.bashrc
@@ -37,9 +23,9 @@ cp /usr/include/libdrm/drm.h /usr/include/libdrm/drm_mode.h /usr/include/
 
 # Download mesa
 BUILD_PREFIX=~/Desktop
-MESA_PREFIX=${BUILD_PREFIX}/mesa-23.2.0-rc4
+MESA_PREFIX=${BUILD_PREFIX}/mesa-23.2.1
 
-wget --continue --directory-prefix ${BUILD_PREFIX}  https://archive.mesa3d.org/mesa-23.2.0-rc4.tar.xz
+wget --continue --directory-prefix ${BUILD_PREFIX}  https://archive.mesa3d.org/mesa-23.2.1.tar.xz
 tar -xf ${BUILD_PREFIX}/*.tar.xz --directory ${BUILD_PREFIX}
 
 # Set env var
