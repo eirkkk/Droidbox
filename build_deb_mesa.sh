@@ -111,6 +111,7 @@ rm ${MESA_32}/DEBIAN/md5sums ${MESA_32}/DEBIAN/triggers
 rm -rf ${MESA_32}/usr/share/drirc.d
 dpkg-deb --build --root-owner-group ${MESA_32}
 
+apt remove libgl-dev:arm64 libgl-dev:armhf
 
 
 
