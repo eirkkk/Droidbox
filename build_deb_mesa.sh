@@ -66,9 +66,6 @@ cpu_family = 'arm'
 cpu = 'armv7l'
 endian = 'little'
 " > ${MESA_PREFIX}/arm.txt
-cp -r /root/Mesa_turnip_termux/wsi-termux-x11-v3.patch /root/Desktop/mesa-23.2.0-rc4
-cp -r /root/Mesa_turnip_termux/wsi_common_x11.c /root/Desktop/mesa-23.2.0-rc4
-
 
 # Build mesa 
 cd ${MESA_PREFIX}
