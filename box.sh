@@ -68,11 +68,11 @@ wget https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetric
 chmod +x winetricks
 mv winetricks /usr/local/bin/
 rm -rf /root/winetricks
-wget https://raw.githubusercontent.com/eirkkk/Mesa_turnip_termux/main/mesa-vulkan-kgsl_23.2.0-rc4-20230929_arm64.deb
-wget https://raw.githubusercontent.com/eirkkk/Mesa_turnip_termux/main/mesa-vulkan-kgsl_23.2.0-rc4-20230929_armhf.deb
-dpkg -i mesa-vulkan-kgsl_23.2.0-rc4*arm64.deb
-dpkg -i mesa-vulkan-kgsl_23.2.0-rc4*armhf.deb
-rm mesa-vulkan-kgsl_23.2.0-rc4*arm64.deb mesa-vulkan-kgsl_23.2.0-rc4*armhf.deb
+wget https://raw.githubusercontent.com/eirkkk/Mesa_turnip_termux/main/mesa-vulkan-kgsl_23.2.1-20230929_armhf.deb
+wget https://raw.githubusercontent.com/eirkkk/Mesa_turnip_termux/main/mesa-vulkan-kgsl_23.2.1-20230929_arm64.deb
+dpkg -i mesa-vulkan-kgsl*arm64.deb
+dpkg -i mesa-vulkan-kgsl*armhf.deb
+rm mesa-vulkan-kgsl*arm64.deb mesa-vulkan-kgslarmhf.deb
 
 echo 'export DISPLAY=:0' >> ~/.bashrc
 echo 'export PULSE_SERVER=127.0.0.1' >> ~/.bashrc
