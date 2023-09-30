@@ -1,13 +1,14 @@
 #!/bin/bash
-echo "deb http://ports.ubuntu.com/ubuntu-ports mantic main restricted universe multiverse
+echo "
+deb http://ports.ubuntu.com/ubuntu-ports mantic main restricted universe multiverse
 deb-src http://ports.ubuntu.com/ubuntu-ports mantic main restricted universe multiverse
 deb http://ports.ubuntu.com/ubuntu-ports mantic-updates main restricted universe multiverse
 deb-src http://ports.ubuntu.com/ubuntu-ports mantic-updates main restricted universe multiverse
 deb http://ports.ubuntu.com/ubuntu-ports mantic-backports main restricted universe multiverse
 deb-src http://ports.ubuntu.com/ubuntu-ports mantic-backports main restricted universe multiverse
 deb http://ports.ubuntu.com/ubuntu-ports mantic-security main restricted universe multiverse
-deb-src http://ports.ubuntu.com/ubuntu-ports mantic-security main restricted universe multiverse" 
-> /etc/apt/sources.list
+deb-src http://ports.ubuntu.com/ubuntu-ports mantic-security main restricted universe multiverse
+" > /etc/apt/sources.list
 # Preparing
 
 echo 'export DISPLAY=:0' >> ~/.bashrc
@@ -102,7 +103,7 @@ rm ${MESA_32}/DEBIAN/md5sums ${MESA_32}/DEBIAN/triggers
 rm -rf ${MESA_32}/usr/share/drirc.d
 dpkg-deb --build --root-owner-group ${MESA_32}
 
-apt remove libgl-dev:arm64 libgl-dev:armhf
+
 
 
 
