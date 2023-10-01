@@ -29,11 +29,11 @@ apt install box64-android -y
 echo "Box64 installation completed."
 
 # Download and install Wine Proton
-wget https://github.com/GloriousEggroll/wine-ge-custom/releases/download/GE-Proton8-14/wine-lutris-GE-Proton8-14-x86_64.tar.xz
-tar -xf wine-lutris-GE-Proton8-14-x86_64.tar.xz
+wget https://github.com/Kron4ek/Wine-Builds/releases/download/proton-8.0-3/wine-proton-8.0-3-amd64.tar.xz
+tar -xf wine-proton-8.0-3-amd64.tar.xz
 echo "Removing unpacked archive..."
-mv lutris-GE-Proton8-14-x86_64 wine
-rm wine-lutris-GE-Proton8-14-x86_64.tar.xz
+mv wine-proton-8.0-3-amd64 wine
+rm wine-proton-8.0-3-amd64.tar.xz
 cp -r wine /opt
 rm -rf /root/wine
 
