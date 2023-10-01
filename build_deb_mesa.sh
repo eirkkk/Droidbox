@@ -64,11 +64,8 @@ endian = 'little'
 
 # Build mesa 
 cd ${MESA_PREFIX}
-wget https://raw.githubusercontent.com/eirkkk/Mesa_turnip_termux/main/wsi-termux-x11-v3.patch
-wget https://raw.githubusercontent.com/eirkkk/Mesa_turnip_termux/main/wsi_common_x11.c
-git apply -v wsi-termux-x11-v3.patch
-rm -rf src/vulkan/wsi/wsi_common_x11.c
-cp -r wsi_common_x11.c src/vulkan/wsi/
+wget https://raw.githubusercontent.com/eirkkk/Mesa_turnip_termux/main/wsi-termux-x11-v4.patch
+git apply -v wsi-termux-x11-v4.patch
 rm wsi-termux-x11-v3.patch
 
 meson  build64/ --prefix /usr --libdir lib/aarch64-linux-gnu/ -D platforms=x11,wayland -D gallium-drivers=freedreno -D vulkan-drivers=freedreno -D freedreno-kmds=msm,kgsl -D dri3=enabled -D buildtype=release -D glx=disabled -D egl=disabled -D gles1=disabled -D gles2=disabled -D gallium-xa=disabled -D opengl=false -D shared-glapi=disabled -D b_lto=true -D b_ndebug=true -D cpp_rtti=false -D gbm=disabled -D llvm=disabled -D shared-llvm=disabled -D xmlconfig=disabled
