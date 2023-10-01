@@ -3,11 +3,9 @@
 1. قم بتشغيل تطبيق Termux وادخل الأوامر التالية واحدة تلو الأخرى واضغط على "Enter" بعد كل سطر:
 ```bash
 pkg up
-pkg upgrade
-pkg install x11-repo
-pkg install proot-distro proot
-pkg install termux-x11-nightly
-pkg install wget git pulseaudio
+pkg upgrade -y
+pkg install x11-repo -y
+pkg install proot-distro proot termux-x11-nightly wget git pulseaudio -y
 termux-setup-storage
 proot-distro install ubuntu
 ```
