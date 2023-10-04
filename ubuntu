@@ -14,14 +14,14 @@ then
 	pkill -f "app_process / com.termux.x11"
 elif [ $1 = "--version" ]
 then
-        echo "16.09.23"
+        echo "1.0"
 elif [ $1 = "--help" ]
 then
-        echo "ubuntu - preconfigured Ubuntu 22.04 rootfs with ubuntu, ubuntu, Wine Proton, DXVK and Adreno GPU drivers for Android"
+        echo "Droidbox, ubuntu, Wine Proton, DXVK and Adreno GPU drivers for Android"
 	echo "Usage: ubuntu {argument}"
 	echo "Available arguments:"
-	echo "--start - start ubuntu"
-	echo "--version - show current version of ubuntu"
+	echo "--start - start Droidbox"
+	echo "--version - show current version of Droidbox"
 	echo "--help - see available arguments"
 else
 	echo "Invalid argument, use --help to see available arguments"
