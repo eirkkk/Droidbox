@@ -38,13 +38,13 @@ cp -r wine /opt
 rm -rf /root/wine
 
 # Download and install 
-wget https://raw.githubusercontent.com/eirkkk/Mesa_turnip_termux/main/box64_bash
-wget https://raw.githubusercontent.com/eirkkk/Mesa_turnip_termux/main/box86_bash
+wget https://raw.githubusercontent.com/eirkkk/Droidbox/main/box64_bash
+wget https://raw.githubusercontent.com/eirkkk/Droidbox/main/box86_bash
 chmod +x /root/box*_bash && cp -r /root/box*_bash /opt
 rm -rf /root/box*_bash
 
 # Download VulkanDriveBox.tar.xz
-wget https://github.com/eirkkk/Mesa_turnip_termux/releases/download/Eirkkk/VulkanDriveBox.tar.xz
+wget https://github.com/eirkkk/Droidbox/releases/download/Eirkkk/VulkanDriveBox.tar.xz
 
 # Copy the downloaded file to /opt
 cp -r /root/VulkanDriveBox.tar.xz /opt
@@ -74,8 +74,8 @@ wget https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetric
 chmod +x winetricks
 mv winetricks /usr/local/bin/
 rm -rf /root/winetricks
-wget https://raw.githubusercontent.com/eirkkk/Mesa_turnip_termux/main/mesa-vulkan-kgsl_23.2.1-20230929_armhf.deb
-wget https://raw.githubusercontent.com/eirkkk/Mesa_turnip_termux/main/mesa-vulkan-kgsl_23.2.1-20230929_arm64.deb
+wget https://raw.githubusercontent.com/eirkkk/Droidbox/main/mesa-vulkan-kgsl_23.2.1-20230929_armhf.deb
+wget https://raw.githubusercontent.com/eirkkk/Droidbox/main/mesa-vulkan-kgsl_23.2.1-20230929_arm64.deb
 dpkg -i mesa-vulkan-kgsl*arm64.deb
 dpkg -i mesa-vulkan-kgsl*armhf.deb
 rm mesa-vulkan-kgsl*arm64.deb mesa-vulkan-kgslarmhf.deb
