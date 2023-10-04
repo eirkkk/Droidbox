@@ -18,8 +18,8 @@ start_time=$(date +%s)
 echo "Executing... Please wait."
 
 # Execute the commands
-pkg up -y 
-pkg upgrade -y 
+pkg up 
+pkg upgrade 
 clear
 # Display a waiting message
 echo "Executing... Please wait."
