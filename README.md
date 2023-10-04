@@ -1,37 +1,24 @@
 
 
-1. قم بتشغيل تطبيق Termux وادخل الأوامر التالية واحدة تلو الأخرى واضغط على "Enter" بعد كل سطر:
+1. قم بتشغيل تطبيق Termux وادخل الأمر واضغط على "Enter" :
 ```bash
-pkg up
-pkg upgrade -y
-pkg install x11-repo -y
-pkg install proot-distro proot termux-x11-nightly wget git pulseaudio -y
-termux-setup-storage
-proot-distro install ubuntu
-```
-2. قم بتنزيل ملفي البرنامج النصي (start-ubuntu و ubuntu) من الروابط التالية باستخدام الأمر wget:
-```bash
-wget https://raw.githubusercontent.com/eirkkk/Droidbox/main/start-ubuntu
-wget https://raw.githubusercontent.com/eirkkk/Droidbox/main/ubuntu
-chmod +x start-ubuntu && chmod +x ubuntu
-cp -r start-ubuntu ubuntu /data/data/com.termux/files/usr/bin
-rm -rf start-ubuntu ubuntu
+curl https://raw.githubusercontent.com/eirkkk/Droidbox/main/setup.sh | bash
 ```
 
-3. بعد الانتهاء من تثبيت Ubuntu، قم بتشغيل الأمر التالي لبدء Ubuntu:
+2.. بعد الانتهاء من تثبيت Ubuntu، قم بتشغيل الأمر التالي لبدء Ubuntu:
 ```bash
 ubuntu --start
 ```
-4.بعد تشغل ubuntu ضع الرابط لتثبيت box64 box86 مع التعريفات بدون اخذ الكثير من مساحة الجهاز
+3.بعد تشغل ubuntu ضع الرابط لتثبيت box64 box86 مع التعريفات بدون اخذ الكثير من مساحة الجهاز
 ```bash
 apt update && apt install wget && wget https://raw.githubusercontent.com/eirkkk/Droidbox/main/box.sh && bash box.sh && rm box.sh
 ```
-5. هاذي الخطوة لتثبيت برنامج عرض الرسوميات على هاتفك الاندرويد:
+4.. هاذي الخطوة لتثبيت برنامج عرض الرسوميات على هاتفك الاندرويد:
 ```bash
 https://raw.githubusercontent.com/eirkkk/Droidbox/main/app-arm64-v8a-debug.apk
 ```
 
-6.بعد الانتهاء من تثبيت البرنامج على الهاتف عد الى تطبيق Termux ادخل الامر  :
+5.بعد الانتهاء من تثبيت البرنامج على الهاتف عد الى تطبيق Termux ادخل الامر  :
 ```bash
 ubuntu --start
 ```
@@ -49,7 +36,7 @@ box
    ````
 
 
-7. اذا كنت ترغب بصناعه تعريفات خاصه بك ادخل هاذا الامر :
+6.. اذا كنت ترغب بصناعه تعريفات خاصه بك ادخل هاذا الامر :
 ```bash
 cd /root
 apt update
@@ -57,7 +44,7 @@ apt install wget
 wget https://raw.githubusercontent.com/eirkkk/Droidbox/main/build_deb_mesa.sh
 bash build_deb_mesa.sh
 ```
- 8. بعد الأ نتهاء من التثبيت ستكون هناك حزمتين في مجلد Desktop قم بدخول الى مجلد Desktop لتثبيت التعريفات:
+ 7. بعد الأ نتهاء من التثبيت ستكون هناك حزمتين في مجلد Desktop قم بدخول الى مجلد Desktop لتثبيت التعريفات:
 ```bash 
 cd /root/Desktop
 dpkg -i mesa-vulkan-kgsl*armhf.deb
