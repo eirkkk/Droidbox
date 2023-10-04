@@ -21,6 +21,9 @@ echo "Executing... Please wait."
 pkg up -y 
 pkg upgrade -y 
 clear
+# Display a waiting message
+echo "Executing... Please wait."
+
 pkg install x11-repo -y > /dev/null 2>&1
 pkg install proot-distro proot termux-x11-nightly wget git pulseaudio -y > /dev/null 2>&1
 termux-setup-storage > /dev/null 2>&1
