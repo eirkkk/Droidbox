@@ -33,7 +33,7 @@
 
 5. After launching Ubuntu, enter the following command to install box64, box86, and their drivers without taking up much space on the device:
    ```bash
-   apt update && apt install wget && wget https://raw.githubusercontent.com/eirkkk/Mesa_turnip_termux/main/box.sh && bash box.sh && rm box.sh
+   apt update && apt install wget && wget https://raw.githubusercontent.com/eirkkk/Droidbox/main/box.sh && bash box.sh && rm box.sh
    ```
 
 6. This step is for installing the graphics display program on your Android phone:
