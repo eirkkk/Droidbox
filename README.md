@@ -11,8 +11,8 @@ proot-distro install ubuntu
 ```
 2. قم بتنزيل ملفي البرنامج النصي (start-ubuntu و ubuntu) من الروابط التالية باستخدام الأمر wget:
 ```bash
-wget https://raw.githubusercontent.com/eirkkk/Mesa_turnip_termux/main/start-ubuntu
-wget https://raw.githubusercontent.com/eirkkk/Mesa_turnip_termux/main/ubuntu
+wget https://raw.githubusercontent.com/eirkkk/Droidbox/main/start-ubuntu
+wget https://raw.githubusercontent.com/eirkkk/Droidbox/main/ubuntu
 chmod +x start-ubuntu && chmod +x ubuntu
 cp -r start-ubuntu ubuntu /data/data/com.termux/files/usr/bin
 rm -rf start-ubuntu ubuntu
@@ -24,11 +24,11 @@ ubuntu --start
 ```
 4.بعد تشغل ubuntu ضع الرابط لتثبيت box64 box86 مع التعريفات بدون اخذ الكثير من مساحة الجهاز
 ```bash
-apt update && apt install wget && wget https://raw.githubusercontent.com/eirkkk/Mesa_turnip_termux/main/box.sh && bash box.sh && rm box.sh
+apt update && apt install wget && wget https://raw.githubusercontent.com/eirkkk/Droidbox/main/box.sh && bash box.sh && rm box.sh
 ```
 5. هاذي الخطوة لتثبيت برنامج عرض الرسوميات على هاتفك الاندرويد:
 ```bash
-https://raw.githubusercontent.com/eirkkk/Mesa_turnip_termux/main/app-arm64-v8a-debug.apk
+https://raw.githubusercontent.com/eirkkk/Droidbox/main/app-arm64-v8a-debug.apk
 ```
 
 6.بعد الانتهاء من تثبيت البرنامج على الهاتف عد الى تطبيق Termux ادخل الامر  :
@@ -54,7 +54,7 @@ box
 cd /root
 apt update
 apt install wget
-wget https://raw.githubusercontent.com/eirkkk/Mesa_turnip_termux/main/build_deb_mesa.sh
+wget https://raw.githubusercontent.com/eirkkk/Droidbox/main/build_deb_mesa.sh
 bash build_deb_mesa.sh
 ```
  8. بعد الأ نتهاء من التثبيت ستكون هناك حزمتين في مجلد Desktop قم بدخول الى مجلد Desktop لتثبيت التعريفات:
