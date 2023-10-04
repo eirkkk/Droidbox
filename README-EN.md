@@ -14,8 +14,8 @@
 
 2. Download the script files (start-ubuntu and ubuntu) from the following links using the wget command:
    ```bash
-   wget https://raw.githubusercontent.com/eirkkk/Mesa_turnip_termux/main/start-ubuntu
-   wget https://raw.githubusercontent.com/eirkkk/Mesa_turnip_termux/main/ubuntu
+   wget https://raw.githubusercontent.com/eirkkk/Droidbox/main/start-ubuntu
+   wget https://raw.githubusercontent.com/eirkkk/Droidbox/main/ubuntu
    ```
 
 3. After downloading the files, execute the following commands in Termux:
@@ -38,7 +38,7 @@
 
 6. This step is for installing the graphics display program on your Android phone:
    ```bash
-   https://raw.githubusercontent.com/eirkkk/Mesa_turnip_termux/main/app-arm64-v8a-debug.apk
+   https://raw.githubusercontent.com/eirkkk/Droidbox/main/app-arm64-v8a-debug.apk
    ```
 
 7. After installing the program on your phone, return to the Termux application and enter the command:
@@ -61,7 +61,7 @@
    ```bash
    apt update
    apt install git
-   git clone https://github.com/eirkkk/Mesa_turnip_termux
+   git clone https://github.com/eirkkk/Droidbox.
    cp -r /root/Mesa_turnip_termux/build_deb_mesa.sh /root
    bash build_deb_mesa.sh
    rm -rt /root/.bashrc
