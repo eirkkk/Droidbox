@@ -27,12 +27,12 @@ echo "Executing... Please wait."
 pkg install x11-repo -y > /dev/null 2>&1
 pkg install proot-distro proot termux-x11-nightly wget git pulseaudio -y > /dev/null 2>&1
 termux-setup-storage > /dev/null 2>&1
-proot-distro install ubuntu > /dev/null 2>&1
-wget https://raw.githubusercontent.com/eirkkk/Droidbox/main/start-ubuntu > /dev/null 2>&1
-wget https://raw.githubusercontent.com/eirkkk/Droidbox/main/ubuntu > /dev/null 2>&1
-chmod +x start-ubuntu && chmod +x ubuntu > /dev/null 2>&1
-cp -r start-ubuntu ubuntu /data/data/com.termux/files/usr/bin > /dev/null 2>&1
-rm -rf start-ubuntu ubuntu > /dev/null 2>&1
+proot-distro install debian > /dev/null 2>&1
+wget https://raw.githubusercontent.com/eirkkk/Droidbox/main/start-droidbox > /dev/null 2>&1
+wget https://raw.githubusercontent.com/eirkkk/Droidbox/main/droidbox > /dev/null 2>&1
+chmod +x start-droidbox && chmod +x droidbox > /dev/null 2>&1
+cp -r droidbox start-droidbox /data/data/com.termux/files/usr/bin > /dev/null 2>&1
+rm -rf droidbox start-droidbox > /dev/null 2>&1
 
 # Countdown timer synchronized with execution
 while [ $countdown -gt 0 ]; do
