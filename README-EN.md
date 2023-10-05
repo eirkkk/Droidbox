@@ -1,3 +1,8 @@
+![logo](Droidbox/ideogram~2.jpeg "logo")
+
+English 
+&nbsp;&nbsp;| &nbsp;&nbsp;
+<a href="https://github.com/eirkkk/Droidbox/blob/main/README.md">عربي</a>
 
 1. Start the Termux application and enter the following command, then press "Enter":
    ```bash
