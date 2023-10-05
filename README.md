@@ -24,12 +24,8 @@ droidbox --start
 ```bash
 apt update && apt install wget && wget https://raw.githubusercontent.com/eirkkk/Droidbox/main/box.sh && bash box.sh && rm box.sh
 ```
-4.. هاذي الخطوة لتثبيت برنامج عرض الرسوميات على هاتفك الاندرويد:
-```bash
-https://raw.githubusercontent.com/eirkkk/Droidbox/main/app-arm64-v8a-debug.apk
-```
 
-5.بعد الانتهاء من تثبيت البرنامج على الهاتف عد الى تطبيق Termux ادخل الامر  :
+4.بعد الانتهاء من تثبيت البرنامج على الهاتف عد الى تطبيق Termux ادخل الامر  :
 ```bash
 droidbox --start
 ```
@@ -47,7 +43,7 @@ box
    ````
 
 
-6.. اذا كنت ترغب بصناعه تعريفات خاصه بك ادخل هاذا الامر :
+5.. اذا كنت ترغب بصناعه تعريفات خاصه بك ادخل هاذا الامر :
 ```bash
 cd /root
 apt update
@@ -55,7 +51,7 @@ apt install wget
 wget https://raw.githubusercontent.com/eirkkk/Droidbox/main/build_deb_mesa.sh
 bash build_deb_mesa.sh
 ```
- 7. بعد الأ نتهاء من التثبيت ستكون هناك حزمتين في مجلد Desktop قم بدخول الى مجلد Desktop لتثبيت التعريفات:
+ 6. بعد الأ نتهاء من التثبيت ستكون هناك حزمتين في مجلد Desktop قم بدخول الى مجلد Desktop لتثبيت التعريفات:
 ```bash 
 cd /root/Desktop
 dpkg -i mesa-vulkan-kgsl*armhf.deb
