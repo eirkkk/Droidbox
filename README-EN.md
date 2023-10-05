@@ -9,7 +9,7 @@ After installation the start command in termux is `termux-box`
 
 Download and install
 [Termux](https://f-droid.org/repo/com.termux_118.apk),
-[Termux-X11](https://raw.githubusercontent.com/eirkkk/Droidbox/main/termux-x11-arm64-v8a-debug.apk)
+[Termux-X11](https://raw.githubusercontent.com/eirkkk/Droidbox/main/app-arm64-v8a-debug.apk)
 
 1. Start the Termux application and enter the following command, then press "Enter":
    ```bash
