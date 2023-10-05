@@ -25,12 +25,8 @@ Download and install
    apt update && apt install wget && wget https://raw.githubusercontent.com/eirkkk/Droidbox/main/box.sh && bash box.sh && rm box.sh
    ```
 
-4. This step is for installing the graphics display application on your Android device:
-   ```bash
-   https://raw.githubusercontent.com/eirkkk/Droidbox/main/app-arm64-v8a-debug.apk
-   ```
 
-5. After installing the app on your phone, return to the Termux application and enter the following command:
+4. After installing the app on your phone, return to the Termux application and enter the following command:
    ```bash
    droidbox --start
    ```
@@ -40,7 +36,7 @@ Download and install
    ```
    After entering the "box" command, you'll see three options. Choose option number 2 to complete the emulator setup.
 
-6. If you want to create your own custom drivers, use this command:
+5. If you want to create your own custom drivers, use this command:
    ```bash
    cd /root
    apt update
@@ -49,7 +45,7 @@ Download and install
    bash build_deb_mesa.sh
    ```
 
-7. After the installation is complete, you will have two packages in the Desktop folder. Enter the Desktop folder to install the drivers:
+6. After the installation is complete, you will have two packages in the Desktop folder. Enter the Desktop folder to install the drivers:
    ```bash
    cd /root/Desktop
    dpkg -i mesa-vulkan-kgsl*armhf.deb
