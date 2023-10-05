@@ -5,7 +5,7 @@
 curl https://raw.githubusercontent.com/eirkkk/Droidbox/main/setup.sh | bash
 ```
 
-2.. بعد الانتهاء من تثبيت Ubuntu، قم بتشغيل الأمر التالي لبدء droidbox:
+2.. بعد الانتهاء من تثبيت Debian قم بتشغيل الأمر التالي لبدء droidbox:
 ```bash
 droidbox --start
 ```
