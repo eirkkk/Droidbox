@@ -2,7 +2,7 @@
 
 1. قم بتشغيل تطبيق Termux وادخل الأمر واضغط على "Enter" :
 ```bash
-curl https://raw.githubusercontent.com/eirkkk/Droidbox/main/setup.sh | bash
+curl -o install https://raw.githubusercontent.com/eirkkk/Droidbox/main/setup.sh && chmod +x setup.sh && ./setup.sh
 ```
 
 2.. بعد الانتهاء من تثبيت Debian قم بتشغيل الأمر التالي لبدء droidbox:
