@@ -5,7 +5,6 @@ English
 <a href="https://github.com/eirkkk/Droidbox/blob/main/README.md">عربي</a>
 
 ## Installation
-After installation the start command in termux is `termux-box`
 
 Download and install
 [Termux](https://f-droid.org/repo/com.termux_118.apk),
