@@ -2,7 +2,7 @@
 
 1. قم بتشغيل تطبيق Termux وادخل الأمر واضغط على "Enter" :
 ```bash
-pkg up && curl https://raw.githubusercontent.com/eirkkk/Droidbox/main/setup.sh | bash
+curl https://raw.githubusercontent.com/eirkkk/Droidbox/main/setup.sh | bash
 ```
 
 2.. بعد الانتهاء من تثبيت Ubuntu، قم بتشغيل الأمر التالي لبدء droidbox:
