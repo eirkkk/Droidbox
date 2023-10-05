@@ -19,6 +19,7 @@ echo "Executing... Please wait."
 
 # Execute the commands
 pkg up 
+sleep 5
 pkg upgrade 
 clear
 # Display a waiting message
