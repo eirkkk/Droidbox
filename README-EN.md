@@ -4,6 +4,13 @@ English
 &nbsp;&nbsp;| &nbsp;&nbsp;
 <a href="https://github.com/eirkkk/Droidbox/blob/main/README.md">عربي</a>
 
+## Installation
+After installation the start command in termux is `termux-box`
+
+Download and install
+[Termux](https://f-droid.org/repo/com.termux_118.apk),
+[Termux-X11](https://raw.githubusercontent.com/eirkkk/Droidbox/main/termux-x11-arm64-v8a-debug.apk)
+
 1. Start the Termux application and enter the following command, then press "Enter":
    ```bash
    curl -o install https://raw.githubusercontent.com/eirkkk/Droidbox/main/setup.sh && chmod +x setup.sh && ./setup.sh
