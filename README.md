@@ -4,10 +4,10 @@
 &nbsp;&nbsp;| &nbsp;&nbsp;
 <a href="https://github.com/eirkkk/Droidbox/blob/main/README-EN.md">English</a>
 
-## Installation
-After installation the start command in termux is
+## تثبيت
 
-Download and install
+
+تحميل و تثبيت
 [Termux](https://f-droid.org/repo/com.termux_118.apk),
 [Termux-X11](https://raw.githubusercontent.com/eirkkk/Droidbox/main/app-arm64-v8a-debug.apk)
 
