@@ -60,3 +60,29 @@ dpkg -i mesa-vulkan-kgsl*arm64.deb
 إذا كان لديك أي أسئلة أخرى، فلا تتردد في طرحها.
 
 بعد ذلك، يجب أن يتم تشغيل سطح المكتب لمحاكي ويندوز Box86 و Box64 على جهازك الذي يعمل بنظام Termux. يُرجى ملاحظة أن هذه الإجراءات قد تتطلب وقتًا واستخدامًا مكثفًا للموارد، وقد يكون هناك متطلبات إضافية لتشغيل تطبيقات ويندوز على هذا المحاكي.
+
+## تطبيقات الطرف الثالث
+
+[Box64](https://github.com/ptitSeb/box64) MIT license
+
+[Box86](https://github.com/ptitSeb/box86) MIT license
+
+[Proot](https://github.com/termux/proot) GPL-2.0 license
+
+[DXVK](https://github.com/doitsujin/dxvk) Zlib license
+
+[DXVK-ASYNC](https://github.com/Sporif/dxvk-async)
+
+[DXVK-GPLASYNC](https://gitlab.com/Ph42oN/dxvk-gplasync)
+
+[VKD3D](https://github.com/lutris/vkd3d) LGPL-2.1 license
+
+[D8VK](https://github.com/AlpyneDreams/d8vk) Zlib license
+
+[Termux-app](https://github.com/termux/termux-app) GPLv3 license
+
+[Termux-x11](https://github.com/termux/termux-x11) GPL-3.0 license
+
+[Wine](https://wiki.winehq.org/Licensing)
+
+[Mesa](https://docs.mesa3d.org/license.html) MIT license
