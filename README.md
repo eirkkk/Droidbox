@@ -5,9 +5,9 @@
 curl https://raw.githubusercontent.com/eirkkk/Droidbox/main/setup.sh | bash
 ```
 
-2.. بعد الانتهاء من تثبيت Ubuntu، قم بتشغيل الأمر التالي لبدء Ubuntu:
+2.. بعد الانتهاء من تثبيت Ubuntu، قم بتشغيل الأمر التالي لبدء droidbox:
 ```bash
-ubuntu --start
+droidbox --start
 ```
 3.بعد تشغل ubuntu ضع الرابط لتثبيت box64 box86 مع التعريفات بدون اخذ الكثير من مساحة الجهاز
 ```bash
@@ -20,7 +20,7 @@ https://raw.githubusercontent.com/eirkkk/Droidbox/main/app-arm64-v8a-debug.apk
 
 5.بعد الانتهاء من تثبيت البرنامج على الهاتف عد الى تطبيق Termux ادخل الامر  :
 ```bash
-ubuntu --start
+droidbox --start
 ```
 .ثم بعد فتح الواجه ادخل هاذا الامر :
 
