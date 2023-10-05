@@ -2,7 +2,7 @@
 
 عربي
 &nbsp;&nbsp;| &nbsp;&nbsp;
-<a href="(https://github.com/eirkkk/Droidbox/blob/main/README-EN.md)">English</a>
+<a href="https://github.com/olegos2/termux-box/blob/main/README-ru.md">English</a>
 
 1. قم بتشغيل تطبيق Termux وادخل الأمر واضغط على "Enter" :
 ```bash
