@@ -1,8 +1,8 @@
 ![logo](Droidbox/ideogram~2.jpeg "logo")
 
-English
+عربي
 &nbsp;&nbsp;| &nbsp;&nbsp;
-<a href="https://github.com/eirkkk/Droidbox/main/README-EN.md">Русский</a>
+<a href="https://github.com/eirkkk/Droidbox/main/README-EN.md">English</a>
 
 1. قم بتشغيل تطبيق Termux وادخل الأمر واضغط على "Enter" :
 ```bash
