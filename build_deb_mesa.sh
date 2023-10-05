@@ -1,13 +1,11 @@
 #!/bin/bash
 echo "
-deb http://ports.ubuntu.com/ubuntu-ports mantic main restricted universe multiverse
-deb-src http://ports.ubuntu.com/ubuntu-ports mantic main restricted universe multiverse
-deb http://ports.ubuntu.com/ubuntu-ports mantic-updates main restricted universe multiverse
-deb-src http://ports.ubuntu.com/ubuntu-ports mantic-updates main restricted universe multiverse
-deb http://ports.ubuntu.com/ubuntu-ports mantic-backports main restricted universe multiverse
-deb-src http://ports.ubuntu.com/ubuntu-ports mantic-backports main restricted universe multiverse
-deb http://ports.ubuntu.com/ubuntu-ports mantic-security main restricted universe multiverse
-deb-src http://ports.ubuntu.com/ubuntu-ports mantic-security main restricted universe multiverse
+deb http://deb.debian.org/debian trixie main contrib non-free
+deb-src http://deb.debian.org/debian trixie main contrib non-free
+deb http://deb.debian.org/debian-security/ trixie-security main contrib non-free
+deb-src http://deb.debian.org/debian-security/ trixie-security main contrib non-free
+deb http://deb.debian.org/debian trixie-updates main contrib non-free
+deb-src http://deb.debian.org/debian trixie-updates main contrib non-free
 " > /etc/apt/sources.list
 # Preparing
 
