@@ -9,8 +9,8 @@ then
 	echo ""
 	echo -e "Termux-x11 started"
 	echo ""
-	echo "Starting ubuntu..."
-	$PREFIX/bin/start-ubuntu
+	echo "Starting droidbox..."
+	$PREFIX/bin/start-droidbox
 	pkill -f "app_process / com.termux.x11"
 elif [ $1 = "--version" ]
 then
