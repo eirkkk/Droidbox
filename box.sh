@@ -28,31 +28,25 @@ apt install box64-android -y
 echo "Box64 installation completed."
 
 # Download and install Wine Proton
-wget https://github.com/Kron4ek/Wine-Builds/releases/download/proton-8.0-3/wine-proton-8.0-3-amd64.tar.xz
-tar -xf wine-proton-8.0-3-amd64.tar.xz
+wget https://github.com/Kron4ek/Wine-Builds/releases/download/proton-8.0-4/wine-proton-8.0-4-amd64.tar.xz
+tar -xf wine-proton-8.0-4-amd64.tar.xz -C /opt  
 echo "Removing unpacked archive..."
-mv wine-proton-8.0-3-amd64 wine
-rm wine-proton-8.0-3-amd64.tar.xz
-cp -r wine /opt
-rm -rf /root/wine
+mv /opt/wine-proton-8.0-4-amd64 wine
+rm /root/wine-proton-8.0-4-amd64.tar.xz
 
 # Download and install 
 wget https://raw.githubusercontent.com/eirkkk/Droidbox/main/box64_bash
 wget https://raw.githubusercontent.com/eirkkk/Droidbox/main/box86_bash
-chmod +x /root/box*_bash && cp -r /root/box*_bash /opt
-rm -rf /root/box*_bash
+chmod +x /root/box*_bash && mv /root/box*_bash /opt
 
 # Download VulkanDriveBox.tar.xz
 wget https://github.com/eirkkk/Droidbox/releases/download/Eirkkk/VulkanDriveBox.tar.xz
 
 # Copy the downloaded file to /opt
-cp -r /root/VulkanDriveBox.tar.xz /opt
+tar -xf VulkanDriveBox.tar.xz -C /opt
+# Extract the contents of 
 
-# Navigate to /opt
-cd /opt
-
-# Extract the contents of VulkanDriveBox.tar.xz
-tar -xf /opt/VulkanDriveBox.tar.xz
+rm -rf /root/VulkanDriveBox.tar.xz
 
 # Navigate to the 'box' directory
 cd /opt/box
@@ -61,7 +55,7 @@ cd /opt/box
 chmod +x *
 
 # Copy the 'box' directory to /usr/local/bin
-cp -r box /usr/local/bin
+mv box /usr/local/bin
 
 # Clean up by removing the downloaded file
 apt remove mesa-vulkan-drivers:armhf -y
