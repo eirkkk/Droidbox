@@ -22,7 +22,7 @@ Download and install
 
 3. To install box64, box86, and their dependencies without taking up too much space on your device, use the following command:
    ```bash
-   apt update && apt install wget && wget https://raw.githubusercontent.com/eirkkk/Droidbox/main/box.sh && bash box.sh && rm box.sh
+   apt update && apt install wget -y && wget https://raw.githubusercontent.com/eirkkk/Droidbox/main/box.sh && bash box.sh && rm box.sh
    ```
 
 
