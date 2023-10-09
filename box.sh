@@ -31,7 +31,7 @@ echo "Box64 installation completed."
 wget https://github.com/Kron4ek/Wine-Builds/releases/download/proton-8.0-4/wine-proton-8.0-4-amd64.tar.xz
 tar -xvf wine-proton-8.0-4-amd64.tar.xz -C /opt  
 echo "Removing unpacked archive..."
-mv /opt/wine-proton-8.0-4-amd64 wine
+mv /opt/wine-proton-8.0-4-amd64 /opt/wine
 rm /root/wine-proton-8.0-4-amd64.tar.xz
 
 # Download and install 
