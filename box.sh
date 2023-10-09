@@ -29,7 +29,7 @@ echo "Box64 installation completed."
 
 # Download and install Wine Proton
 wget https://github.com/Kron4ek/Wine-Builds/releases/download/proton-8.0-4/wine-proton-8.0-4-amd64.tar.xz
-tar -xf wine-proton-8.0-4-amd64.tar.xz -C /opt  
+tar -xvf wine-proton-8.0-4-amd64.tar.xz -C /opt  
 echo "Removing unpacked archive..."
 mv /opt/wine-proton-8.0-4-amd64 wine
 rm /root/wine-proton-8.0-4-amd64.tar.xz
@@ -43,7 +43,7 @@ chmod +x /root/box*_bash && mv /root/box*_bash /opt
 wget https://github.com/eirkkk/Droidbox/releases/download/Eirkkk/VulkanDriveBox.tar.xz
 
 # Copy the downloaded file to /opt
-tar -xf VulkanDriveBox.tar.xz -C /opt
+tar -xvf VulkanDriveBox.tar.xz -C /opt
 # Extract the contents of 
 
 rm -rf /root/VulkanDriveBox.tar.xz
