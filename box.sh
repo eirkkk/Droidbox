@@ -28,11 +28,11 @@ apt install box64-android -y
 echo "Box64 installation completed."
 
 # Download and install Wine Proton
-wget https://github.com/Kron4ek/Wine-Builds/releases/download/proton-8.0-4/wine-proton-8.0-4-amd64.tar.xz
-tar -xvf wine-proton-8.0-4-amd64.tar.xz -C /opt  
+wget https://github.com/Kron4ek/Wine-Builds/releases/download/proton-8.0-3/wine-proton-8.0-3-amd64.tar.xz
+tar -xvf wine-proton-8.0-3-amd64.tar.xz -C /opt  
 echo "Removing unpacked archive..."
-mv /opt/wine-proton-8.0-4-amd64 /opt/wine
-rm /root/wine-proton-8.0-4-amd64.tar.xz
+mv /opt/wine-proton-8.0-3-amd64 /opt/wine
+rm /root/wine-proton-8.0-3-amd64.tar.xz
 
 # Download and install 
 wget https://raw.githubusercontent.com/eirkkk/Droidbox/main/box64_bash
@@ -96,6 +96,6 @@ echo 'export WINE_LARGE_ADDRESS_AWARE=0' >> ~/.bashrc
 echo 'export PROTON_FORCE_LARGE_ADDRESS_AWARE=0' >> ~/.bashrc
 echo ' export XDG_RUNTIME_DIR=/tmp' >> ~/.bashrc
 source ~/.bashrc
-apt install zlib1g-dev:armhf libexpat1-dev:armhf libdrm-dev:armhf libx11-dev:armhf libx11-xcb-dev:armhf libxext-dev:armhf libxdamage-dev:armhf libxcb-glx0-dev:armhf libxcb-dri2-0-dev:armhf libxcb-dri3-dev:armhf libxcb-shm0-dev:armhf libxcb-present-dev:armhf libxshmfence-dev:armhf libxxf86vm-dev:armhf libxrandr-dev:armhf libwayland-dev:armhf wayland-protocols:armhf libwayland-egl-backend-dev:armhf pkg-config:armhf libedit2:armhf libelf1:armhf libicu-dev:armhf libllvm15:armhf liblzma5:armhf libstdc++6:armhf libtinfo6:armhf libvulkan1:armhf libxml2:armhf libzstd1:armhf
+apt install -y zlib1g-dev:armhf libexpat1-dev:armhf libdrm-dev:armhf libx11-dev:armhf libx11-xcb-dev:armhf libxext-dev:armhf libxdamage-dev:armhf libxcb-glx0-dev:armhf libxcb-dri2-0-dev:armhf libxcb-dri3-dev:armhf libxcb-shm0-dev:armhf libxcb-present-dev:armhf libxshmfence-dev:armhf libxxf86vm-dev:armhf libxrandr-dev:armhf libwayland-dev:armhf wayland-protocols:armhf libwayland-egl-backend-dev:armhf pkg-config:armhf libedit2:armhf libelf1:armhf libicu-dev:armhf libllvm15:armhf liblzma5:armhf libstdc++6:armhf libtinfo6:armhf libvulkan1:armhf libxml2:armhf libzstd1:armhf
 
 echo "Installation completed."
