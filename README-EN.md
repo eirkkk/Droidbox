@@ -12,7 +12,7 @@ Download and install
 
 1. Start the Termux application and enter the following command, then press "Enter":
    ```bash
-   curl -o setup.sh https://raw.githubusercontent.com/eirkkk/Droidbox/main/setup.sh && chmod +x setup.sh && ./setup.sh
+   curl -o setup.sh https://raw.githubusercontent.com/eirkkk/Droidbox/main/setup.sh && chmod +x setup.sh && ./setup.sh && rm setup.sh
    ```
 
 2. After completing the Debian installation, run the following command to start Droidbox:
