@@ -17,8 +17,8 @@ then
         echo "1.0"
 elif [ $1 = "--help" ]
 then
-        echo "Droidbox, ubuntu, Wine Proton, DXVK and Adreno GPU drivers for Android"
-	echo "Usage: ubuntu {argument}"
+        echo "Droidbox, debian, Wine Proton, DXVK and Adreno GPU drivers for Android"
+	echo "Usage: debian {argument}"
 	echo "Available arguments:"
 	echo "--start - start Droidbox"
 	echo "--version - show current version of Droidbox"
