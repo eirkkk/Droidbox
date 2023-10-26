@@ -11,7 +11,7 @@ apt upgrade -y
 clear
 # Install dependencies
 apt install -y nano cabextract libfreetype6 libfreetype6:armhf libfontconfig libfontconfig:armhf libxext6 libxext6:armhf libxinerama-dev libxinerama-dev:armhf libxxf86vm1 libxxf86vm1:armhf libxrender1 libxrender1:armhf libxcomposite1 libxcomposite1:armhf libxrandr2 libxrandr2:armhf libxi6 libxi6:armhf libxcursor1 libxcursor1:armhf libvulkan-dev libvulkan-dev:armhf '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
-apt install -y libc6:armhf gpg libasound-dev:armhf systemd:armhf libpulse-dev:armhf libgnutls*:arm64 libgnutls*:armhf zenity libopenvr-dev:armhf wget git  mesa-utils:arm64 xz-utils pulseaudio vk* vulkan-tools lua5.1:armhf lua5.4:armhf lua5.1 lua5.4 libarchive-dev libarchive-dev:armhf
+apt install -y libc6:armhf gpg libasound-dev:armhf systemd:armhf libpulse-dev:armhf libgnutls*:arm64 libgnutls*:armhf zenity libopenvr-dev:armhf wget git  mesa-utils:arm64 xz-utils pulseaudio vk* vulkan-tools libarchive-dev libarchive-dev:armhf
 apt install -y nano cabextract libfreetype6 libfreetype6:armhf libfontconfig libfontconfig:armhf libxext6 libxext6:armhf libxinerama-dev libxinerama-dev:armhf libxxf86vm1 libxxf86vm1:armhf libxrender1 libxrender1:armhf libxcomposite1 libxcomposite1:armhf libxrandr2 libxrandr2:armhf libxi6 libxi6:armhf libxcursor1 libxcursor1:armhf libvulkan-dev libvulkan-dev:armhf libgl1-mesa-dri:armhf libgl1-mesa-dev:armhf libgl1-mesa-dev:armhf libc6:armhf gpg libasound-dev:armhf systemd:armhf libpulse-dev:armhf libgnutls*:arm64 libgnutls*:armhf zenity libopenvr-dev:armhf wget git  mesa-utils xz-utils pulseaudio libcups2:armhf libcairo2:armhf libclang-cpp15:armhf libdatrie1:armhf libdecor-0-0:armhf libdecor-0-plugin-1-cairo:armhf libegl-mesa0:armhf libegl1:armhf libfribidi0:armhf libgbm1:armhf libgl-dev:armhf libgl1:armhf  libgl1-mesa-dri:armhf libglapi-mesa:armhf libgles2:armhf libglvnd0:armhf libglx-dev:armhf libglx-mesa0:armhf libglx0:armhf libgraphite2-3:armhf libharfbuzz0b:armhf libllvmspirvlib15:armhf libpango-1.0-0:armhf libpangocairo-1.0-0:armhf libpangoft2-1.0-0:armhf libpixman-1-0:armhf libsensors5:armhf libthai0:armhf libvdpau1:armhf libxcb-xkb1:armhf libxkbcommon-x11-0:armhf libxkbcommon0:armhf mesa-common-dev:armhf  mesa-opencl-icd:armhf  mesa-utils-bin:armhf mesa-va-drivers:armhf mesa-vdpau-drivers:armhf ocl-icd-libopencl1:armhf  libglx-mesa0:armhf libxcb-dri3-0:armhf libgl1-mesa* libgl1-mesa*:armhf 
 clear
 # Clone Box86 repository
@@ -55,6 +55,8 @@ mv box /usr/local/bin
 # Clean up by removing the downloaded file
 apt remove mesa-vulkan-drivers:armhf -y 
 apt remove mesa-vulkan-drivers:arm64 -y 
+apt install lua5.4 -y
+apt install lua5.4:armhf  -y
 cd ~/
 wget https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks 
 chmod +x winetricks
