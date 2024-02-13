@@ -12,16 +12,19 @@ apt install -y nano cabextract libfreetype6 libfreetype6:armhf libfontconfig lib
 apt install -y gcc-13-base:armhf libbsd0:armhf libc6:armhf libdrm-amdgpu1:armhf libdrm2:armhf libedit2:armhf libelf1:armhf libexpat1:armhf libffi8:armhf libgcc-s1:armhf libicu72:armhf libidn2-0:armhf libllvm16:armhf liblzma5:armhf libmd0:armhf libstdc++6:armhf libtinfo6:armhf libunistring5:armhf libvulkan1:armhf libwayland-client0:armhf libx11-6:armhf libx11-xcb1:armhf libxau6:armhf libxcb-dri3-0:armhf libxcb-present0:armhf libxcb-randr0:armhf libxcb-shm0:armhf libxcb-sync1:armhf libxcb-xfixes0:armhf libxcb1:armhf libxdmcp6:armhf libxml2:armhf libxshmfence1:armhf libz3-4:armhf libzstd1:armhf zlib1g:armhf
 apt install -y gcc-13-base:arm64 libbsd0:arm64 libc6:arm64 libdrm-amdgpu1:arm64 libdrm2:arm64 libedit2:arm64 libelf1:arm64 libexpat1:arm64 libffi8:arm64 libgcc-s1:arm64 libicu72:arm64 libidn2-0:arm64 libllvm16:arm64 liblzma5:arm64 libmd0:arm64 libstdc++6:arm64 libtinfo6:arm64 libunistring5:arm64 libvulkan1:arm64 libwayland-client0:arm64 libx11-6:arm64 libx11-xcb1:arm64 libxau6:arm64 libxcb-dri3-0:arm64 libxcb-present0:arm64 libxcb-randr0:arm64 libxcb-shm0:arm64 libxcb-sync1:arm64 libxcb-xfixes0:arm64 libxcb1:arm64 libxdmcp6:arm64 libxml2:arm64 libxshmfence1:arm64 libz3-4:arm64 libzstd1:arm64 zlib1g:arm64
 clear
+rm -rf /var/lib/dpkg/info/*
 # Clone Box86 repository
 wget https://ryanfortner.github.io/box86-debs/box86.list -O /etc/apt/sources.list.d/box86.list 
 wget -qO- https://ryanfortner.github.io/box86-debs/KEY.gpg | gpg --dearmor -o /etc/apt/trusted.gpg.d/box86-debs-archive-keyring.gpg 
 apt update
+rm -rf /var/lib/dpkg/info/*
 apt install box86-android:armhf 
 clear
 # Clone Box64 repository
 wget https://ryanfortner.github.io/box64-debs/box64.list -O /etc/apt/sources.list.d/box64.list 
 wget -qO- https://ryanfortner.github.io/box64-debs/KEY.gpg | gpg --dearmor -o /etc/apt/trusted.gpg.d/box64-debs-archive-keyring.gpg 
 apt update 
+rm -rf /var/lib/dpkg/info/*
 apt install box64-android -y 
  clear
 echo "Box64 installation completed."
