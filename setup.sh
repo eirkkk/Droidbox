@@ -34,6 +34,7 @@ cp -r droidbox start-droidbox /data/data/com.termux/files/usr/bin > /dev/null 2>
 rm -rf droidbox start-droidbox > /dev/null 2>&1
 mkdir $HOME/.ubuntu
 proot --link2symlink tar -xf noble-base-arm64.tar.gz -C $HOME/.ubuntu
+rm noble-base-arm64.tar.gz
 
 # Countdown timer synchronized with execution
 while [ $countdown -gt 0 ]; do
