@@ -1,9 +1,5 @@
 #!/bin/bash
-echo "
-deb http://deb.debian.org/debian trixie main contrib non-free
-deb http://deb.debian.org/debian-security/ trixie-security main contrib non-free
-deb http://deb.debian.org/debian trixie-updates main contrib non-free
-" > /etc/apt/sources.list
+
 dpkg --add-architecture armhf
 # Update package manager
 apt update
