@@ -1,5 +1,5 @@
 #!/bin/bash
-
+echo 'nameserver 1.1.1.1' >> /etc/resolv.conf
 dpkg --add-architecture armhf
 # Update package manager
 apt update
