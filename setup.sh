@@ -32,7 +32,7 @@ clear
 
 echo "Installing required packages..."
 pkg install x11-repo -y  > /dev/null 2>&1
-pkg install proot-distro proot termux-x11-nightly wget git pulseaudio -y  > /dev/null 2>&1
+pkg install proot-distro proot termux-x11-nightly wget git pulseaudio tsu -y  > /dev/null 2>&1
 
 # Setup storage access for Termux
 termux-setup-storage
