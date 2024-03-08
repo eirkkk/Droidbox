@@ -19,7 +19,7 @@ then
         echo -e "Termux-x11 started"
 	echo ""
 	sudo mount --bind $PREFIX/tmp/ $ROOTFSPATH/tmp/
-	echo "Starting Box64Droid..."
+	echo "Starting Droidbox..."
         echo ""
 	sudo chroot $ROOTFSPATH /bin/su -
 	sudo umount $ROOTFSPATH/proc
