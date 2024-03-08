@@ -38,8 +38,8 @@ pkg install proot-distro proot termux-x11-nightly wget git pulseaudio tsu -y  > 
 termux-setup-storage
 
 # Download Ubuntu base image
-echo "Downloading Ubuntu base image..."
-wget -q https://cdimage.ubuntu.com/ubuntu-base/daily/current/noble-base-arm64.tar.gz  > /dev/null 2>&1
+echo "Downloading Rootfs base image..."
+wget "https://github.com/debuerreotype/docker-debian-artifacts/blob/dist-arm64v8/trixie/rootfs.tar.xz?raw=true" -O rootfs.tar.xz
 clear
 # Depending on user choice, download and configure the appropriate version
 if [ $version_choice -eq 1 ]; then
@@ -56,15 +56,15 @@ elif [ $version_choice -eq 2 ]; then
 fi
 
 # Create a directory for Ubuntu
-mkdir -p $HOME/.ubuntu
-mkdir $HOME/.ubuntu/sdcard
+mkdir -p $HOME/.debian
+mkdir $HOME/.debian/sdcard
 
 # Extract the Ubuntu base image
-echo "Extracting Ubuntu..."
-proot --link2symlink tar -xf noble-base-arm64.tar.gz -C $HOME/.ubuntu  > /dev/null 2>&1
-echo 'nameserver 1.1.1.1' >> $HOME/.ubuntu/etc/resolv.conf
+echo "Extracting Rootfs..."
+proot --link2symlink tar -xf rootfs.tar.xz -C $HOME/.debian > /dev/null 2>&1
+echo 'nameserver 1.1.1.1' >> $HOME/.debian/etc/resolv.conf
 # Remove the downloaded tar file
-rm noble-base-arm64.tar.gz
+rm rootfs.tar.xz
 
 # Countdown timer synchronized with execution
 while [ $countdown -gt 0 ]; do
