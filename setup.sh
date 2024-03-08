@@ -58,11 +58,11 @@ fi
 # Create a directory for Ubuntu
 mkdir -p $HOME/.ubuntu
 mkdir $HOME/.ubuntu/sdcard
-echo 'nameserver 1.1.1.1' >> $HOME/.ubuntu/etc/resolv.conf
+
 # Extract the Ubuntu base image
 echo "Extracting Ubuntu..."
 proot --link2symlink tar -xf noble-base-arm64.tar.gz -C $HOME/.ubuntu  > /dev/null 2>&1
-mkdir 
+echo 'nameserver 1.1.1.1' >> $HOME/.ubuntu/etc/resolv.conf
 # Remove the downloaded tar file
 rm noble-base-arm64.tar.gz
 
