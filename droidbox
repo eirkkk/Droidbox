@@ -9,7 +9,7 @@ then
 	echo ""
 	echo -e "Termux-x11 started"
 	echo ""
-	echo "Starting droidbox..."
+	echo "Starting Droidbox..."
 	$PREFIX/bin/start-droidbox
 	pkill -f "app_process / com.termux.x11"
 elif [ $1 = "--version" ]
@@ -17,7 +17,7 @@ then
         echo "1.0"
 elif [ $1 = "--help" ]
 then
-        echo "Droidbox, debian, Wine Proton, DXVK and Adreno GPU drivers for Android"
+        echo "Droidbox, Rootfs, Wine Proton, DXVK and Adreno GPU drivers for Android"
 	echo "Usage: debian {argument}"
 	echo "Available arguments:"
 	echo "--start - start Droidbox"
