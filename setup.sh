@@ -1,4 +1,4 @@
-#!/data/data/com.termux/files/usr/bin/bash
+KY#!/data/data/com.termux/files/usr/bin/bash
 
 # Set the countdown timer (e.g., 60 seconds)
 countdown=60
@@ -39,7 +39,7 @@ termux-setup-storage
 
 # Download Ubuntu base image
 echo "Downloading Rootfs base image..."
-wget "https://github.com/debuerreotype/docker-debian-artifacts/blob/dist-arm64v8/trixie/rootfs.tar.xz?raw=true" -O rootfs.tar.xz
+wget "https://github.com/debuerreotype/docker-debian-artifacts/blob/dist-arm64v8/trixie/rootfs.tar.xz?raw=true" -O rootfs.tar.xz   > /dev/null 2>&1
 clear
 # Depending on user choice, download and configure the appropriate version
 if [ $version_choice -eq 1 ]; then
