@@ -57,11 +57,11 @@ fi
 
 # Create a directory for Ubuntu
 mkdir -p $HOME/.ubuntu
-
+mkdir $HOME/.ubuntu/sdcard
 # Extract the Ubuntu base image
 echo "Extracting Ubuntu..."
 proot --link2symlink tar -xf noble-base-arm64.tar.gz -C $HOME/.ubuntu  > /dev/null 2>&1
-
+mkdir 
 # Remove the downloaded tar file
 rm noble-base-arm64.tar.gz
 
