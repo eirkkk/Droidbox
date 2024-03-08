@@ -2,38 +2,67 @@
 
 # Set the countdown timer (e.g., 60 seconds)
 countdown=60
-
+clear
 # Function to display countdown in hh:mm:ss format
 function display_countdown() {
     local hours=$((countdown / 3600))
     local minutes=$(( (countdown % 3600) / 60 ))
     local seconds=$((countdown % 60))
-    echo -ne "Time remaining: $hours:$minutes:$seconds\r"
+    echo -ne "Time remaining: $(printf "%02d:%02d:%02d" $hours $minutes $seconds)\r"
 }
 
-# Start time
-start_time=$(date +%s)
+# Ask user for version
+echo "Select version to install:"
+echo "1) Root version"
+echo "2) Proot version"
+read -p "Enter choice (1 or 2): " version_choice
 
-# Display a waiting message
-echo "Executing... Please wait."
+# Validate user input
+if [[ $version_choice -ne 1 ]] && [[ $version_choice -ne 2 ]]; then
+    echo "Invalid choice. Exiting."
+    exit 1
+fi
 
-# Execute the commands
-pkg update -y
+# Start the main process
+echo "Updating package list..."
+pkg update -y && echo "Update completed."
+
+# Clear the screen
 clear
-# Display a waiting message
-echo "Executing... Please wait."
 
-pkg install x11-repo -y > /dev/null 2>&1
-pkg install proot-distro proot termux-x11-nightly wget git pulseaudio -y > /dev/null 2>&1
-termux-setup-storage > /dev/null 2>&1
-wget  https://cdimage.ubuntu.com/ubuntu-base/daily/current/noble-base-arm64.tar.gz > /dev/null 2>&1
-wget https://raw.githubusercontent.com/eirkkk/Droidbox/main/start-droidbox > /dev/null 2>&1
-wget https://raw.githubusercontent.com/eirkkk/Droidbox/main/droidbox > /dev/null 2>&1
-chmod +x start-droidbox && chmod +x droidbox > /dev/null 2>&1
-cp -r droidbox start-droidbox /data/data/com.termux/files/usr/bin > /dev/null 2>&1
-rm -rf droidbox start-droidbox > /dev/null 2>&1
-mkdir $HOME/.ubuntu
-proot --link2symlink tar -xf noble-base-arm64.tar.gz -C $HOME/.ubuntu
+echo "Installing required packages..."
+pkg install x11-repo -y  > /dev/null 2>&1
+pkg install proot-distro proot termux-x11-nightly wget git pulseaudio -y  > /dev/null 2>&1
+
+# Setup storage access for Termux
+termux-setup-storage
+
+# Download Ubuntu base image
+echo "Downloading Ubuntu base image..."
+wget -q https://cdimage.ubuntu.com/ubuntu-base/daily/current/noble-base-arm64.tar.gz  > /dev/null 2>&1
+clear
+# Depending on user choice, download and configure the appropriate version
+if [ $version_choice -eq 1 ]; then
+    echo "Downloading and configuring Root version..."
+    wget -q https://raw.githubusercontent.com/eirkkk/Droidbox/main/Droidbox/droidbox  > /dev/null 2>&1
+    chmod +x droidbox
+    mv droidbox /data/data/com.termux/files/usr/bin/
+elif [ $version_choice -eq 2 ]; then
+    echo "Downloading and configuring Proot version..."
+    wget -q https://raw.githubusercontent.com/eirkkk/Droidbox/main/start-droidbox  > /dev/null 2>&1
+    wget -q https://raw.githubusercontent.com/eirkkk/Droidbox/main/droidbox  > /dev/null 2>&1
+    chmod +x start-droidbox droidbox
+    mv start-droidbox droidbox /data/data/com.termux/files/usr/bin/
+fi
+
+# Create a directory for Ubuntu
+mkdir -p $HOME/.ubuntu
+
+# Extract the Ubuntu base image
+echo "Extracting Ubuntu..."
+proot --link2symlink tar -xf noble-base-arm64.tar.gz -C $HOME/.ubuntu  > /dev/null 2>&1
+
+# Remove the downloaded tar file
 rm noble-base-arm64.tar.gz
 
 # Countdown timer synchronized with execution
