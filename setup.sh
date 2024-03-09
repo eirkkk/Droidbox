@@ -39,7 +39,6 @@ termux-setup-storage
 
 # Download Ubuntu base image
 echo "Downloading Rootfs base image..."
-wget https://github.com/eirkkk/Droidbox/releases/download/Eirkkk/rootfs.tar.xz > /dev/null 2>&1
 clear
 # Depending on user choice, download and configure the appropriate version
 if [ $version_choice -eq 1 ]; then
@@ -47,19 +46,22 @@ if [ $version_choice -eq 1 ]; then
     wget -q https://raw.githubusercontent.com/eirkkk/Droidbox/main/Droidbox/droidbox  > /dev/null 2>&1
     chmod +x droidbox
     mv droidbox /data/data/com.termux/files/usr/bin/
-   sudo proot --link2symlink tar -xf rootfs.tar.xz -C /data/local/ > /dev/null 2>&1
-   sudo echo 'nameserver 1.1.1.1' >> /data/local/.debian/etc/resolv.conf
+    wget https://github.com/eirkkk/Droidbox/releases/download/Eirkkk/rootfs_chroot.tar.xz > /dev/null 2>&1
+   sudo tar -xf rootfs_chroot.tar.xz -C /data/local/ > /dev/null 2>&1
+   rm rootfs_chroot.tar.xz
    
 elif [ $version_choice -eq 2 ]; then
     echo "Downloading and configurg Proot version..."
     wget -q https://raw.githubusercontent.com/eirkkk/Droidbox/main/start-droidbox  > /dev/null 2>&1
     wget -q https://raw.githubusercontent.com/eirkkk/Droidbox/main/droidbox  > /dev/null 2>&1
     chmod +x start-droidbox droidbox
+    wget https://github.com/eirkkk/Droidbox/releases/download/Eirkkk/rootfs.tar.xz > /dev/null 2>&1
     mv start-droidbox droidbox /data/data/com.termux/files/usr/bin/
     proot --link2symlink tar -xf rootfs.tar.xz -C $HOME/.debian > /dev/null 2>&1
+    rm rootfs.tar.xz
 fi
 # Remove the downloaded tar file
-rm rootfs.tar.xz
+
 
 # Countdown timer synchronized with execution
 while [ $countdown -gt 0 ]; do
