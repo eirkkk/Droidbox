@@ -11,6 +11,8 @@ then
 	sudo mount proc -t proc $ROOTFSPATH/proc
 	sudo mount sys -t sysfs $ROOTFSPATH/sys
 	sudo mount --bind /dev $ROOTFSPATH/dev
+        sudo mount --bind /dev $ROOTFSPATH/data
+        sudo mount --bind /dev $ROOTFSPATH/system
 	sudo mount --bind /dev/pts $ROOTFSPATH/dev/pts
 	sudo mount --bind /sdcard $ROOTFSPATH/sdcard
         echo "Starting Termux-x11..."
@@ -26,6 +28,8 @@ then
 	sudo umount $ROOTFSPATH/sys
 	sudo umount $ROOTFSPATH/dev/pts
 	sudo umount $ROOTFSPATH/dev
+        sudo umount $ROOTFSPATH/data
+        sudo umount $ROOTFSPATH/system
 	sudo umount $ROOTFSPATH/sdcard
 	sudo umount $ROOTFSPATH/tmp/
 	pkill -f "app_process / com.termux.x11"
