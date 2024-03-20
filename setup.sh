@@ -46,13 +46,15 @@ if [ $version_choice -eq 1 ]; then
     wget -q https://raw.githubusercontent.com/eirkkk/Droidbox/main/Droidbox/droidbox  > /dev/null 2>&1
     chmod +x droidbox
     mv droidbox /data/data/com.termux/files/usr/bin/
-   sudo  mkdir -p /data/local/.droidbox/system
+   sudo  mkdir -p /data/local/.droidbox
+   wget -q https://cdimage.ubuntu.com/ubuntu-base/releases/23.10/release/ubuntu-base-23.10-base-arm64.tar.gz > /dev/null 2>&1
+   sudo tar -xf ubuntu-base-23.10-base-arm64.tar.gz -C /data/local/.droidbox
+   rm -rf ubuntu-base-23.10-base-arm64.tar.gz
+   sudo mkdir -p /data/local/.droidbox/system
    sudo mkdir -p /data/local/.droidbox/data
    sudo mkdir -p /data/local/.droidbox/sdcard
-   sudo debootstrap --arch=arm64 tirix /data/local/.droidbox http://ftp.debian.org/debian/ > /dev/null 2>&1
    su -c echo " "nameserver 8.8.8.8" > /data/local/.droidbox/etc/resolv.conf"
    su -c echo  " 'APT::Sandbox::User "root";' > /data/local/.droidbox/etc/apt/apt.conf.d/01-android-nosandbox"
-   su -c echo " "deb http://deb.debian.org/debian trixie main contrib non-free" > /data/local/.droidbox/etc/apt/sources.list"
    su -c echo  " "127.0.0.1 localhost" > /data/local/.droidbox/etc/hosts"
    su -c chroot  /data/local/.droidbox /bin/su -c "groupadd -g 3003 aid_inet 2>/dev/null"
    su -c chroot  /data/local/.droidbox /bin/su -c "groupadd -g 3004 aid_net_raw 2>/dev/null"
