@@ -1,4 +1,4 @@
-KY#!/data/data/com.termux/files/usr/bin/bash
+#!/data/data/com.termux/files/usr/bin/bash
 
 # Set the countdown timer (e.g., 60 seconds)
 countdown=60
@@ -11,7 +11,7 @@ function display_countdown() {
     echo -ne "Time remaining: $(printf "%02d:%02d:%02d" $hours $minutes $seconds)\r"
 }
 
-# Ask user for version
+# Ask user for versions 
 echo "Select version to install:"
 echo "1) Root version"
 echo "2) Proot version"
@@ -32,7 +32,7 @@ clear
 
 echo "Installing required packages..."
 pkg install x11-repo -y  > /dev/null 2>&1
-pkg install proot-distro proot termux-x11-nightly wget git pulseaudio tsu -y  > /dev/null 2>&1
+pkg install proot-distro proot termux-x11-nightly wget git pulseaudio debootstrap tsu -y  > /dev/null 2>&1
 
 # Setup storage access for Termux
 termux-setup-storage
@@ -46,9 +46,22 @@ if [ $version_choice -eq 1 ]; then
     wget -q https://raw.githubusercontent.com/eirkkk/Droidbox/main/Droidbox/droidbox  > /dev/null 2>&1
     chmod +x droidbox
     mv droidbox /data/data/com.termux/files/usr/bin/
-    wget https://github.com/eirkkk/Droidbox/releases/download/Eirkkk/rootfs_chroot.tar.xz > /dev/null 2>&1
-   sudo tar -xf rootfs_chroot.tar.xz -C /data/local/ > /dev/null 2>&1
-   rm rootfs_chroot.tar.xz
+   sudo  mkdir -p /data/local/.droidbox/system
+   sudo mkdir -p /data/local/.droidbox/data
+   sudo mkdir -p /data/local/.droidbox/sdcard
+   sudo debootstrap --arch=arm64 tirix /data/local/.droidbox http://ftp.debian.org/debian/ > /dev/null 2>&1
+   su -c echo " "nameserver 8.8.8.8" > /data/local/.droidbox/etc/resolv.conf"
+   su -c echo  " 'APT::Sandbox::User "root";' > /data/local/.droidbox/etc/apt/apt.conf.d/01-android-nosandbox"
+   su -c echo " "deb http://deb.debian.org/debian trixie main contrib non-free" > /data/local/.droidbox/etc/apt/sources.list"
+   su -c echo  " "127.0.0.1 localhost" > /data/local/.droidbox/etc/hosts"
+   su -c chroot  /data/local/.droidbox /bin/su -c "groupadd -g 3003 aid_inet 2>/dev/null"
+   su -c chroot  /data/local/.droidbox /bin/su -c "groupadd -g 3004 aid_net_raw 2>/dev/null"
+   su -c chroot  /data/local/.droidbox /bin/su -c "groupadd -g 1003 aid_graphics 2>/dev/null"
+   su -c chroot  /data/local/.droidbox /bin/su -c "usermod -g 3003 -G 3003,3004 -a _apt 2>/dev/null"
+   su -c chroot  /data/local/.droidbox /bin/su -c "usermod -G 3003 -a root 2>/dev/null"
+   su -c chroot  /data/local/.droidbox /bin/su -c "ln -sf /usr/share/zoneinfo/Asia/Taipei /etc/localtime 2>/dev/null"
+   su -c chroot  /data/local/.droidbox /bin/su -c "locale-gen en_US.UTF-8 2>/dev/null"
+   
    
 elif [ $version_choice -eq 2 ]; then
     echo "Downloading and configurg Proot version..."
