@@ -6,11 +6,13 @@ elif [ $1 = "--start" ]
 then
 	unset LD_PRELOAD
 	su -c "settings put global settings_enable_monitor_phantom_procs false"
-	export ROOTFSPATH=/data/local/.debian
+	export ROOTFSPATH=/data/local/.droidbox
 	sudo mount -o remount,dev,suid /data
 	sudo mount proc -t proc $ROOTFSPATH/proc
 	sudo mount sys -t sysfs $ROOTFSPATH/sys
 	sudo mount --bind /dev $ROOTFSPATH/dev
+        sudo mount --bind /dev $ROOTFSPATH/data
+        sudo mount --bind /dev $ROOTFSPATH/system
 	sudo mount --bind /dev/pts $ROOTFSPATH/dev/pts
 	sudo mount --bind /sdcard $ROOTFSPATH/sdcard
         echo "Starting Termux-x11..."
@@ -26,6 +28,8 @@ then
 	sudo umount $ROOTFSPATH/sys
 	sudo umount $ROOTFSPATH/dev/pts
 	sudo umount $ROOTFSPATH/dev
+        sudo umount $ROOTFSPATH/data
+        sudo umount $ROOTFSPATH/system 
 	sudo umount $ROOTFSPATH/sdcard
 	sudo umount $ROOTFSPATH/tmp/
 	pkill -f "app_process / com.termux.x11"
@@ -36,9 +40,9 @@ then
 elif [ $1 = "--uninstall" ]
 then
         echo "Uninstalling Droidbox..."
-	if [ -c  /data/local/.debian/dev/urandom ]
+	if [ -c  /data/local/.droidbox/dev/urandom ]
 	then
-            for end_point in  /data/local/.debian/{proc,sys,dev{/pts,},sdcard}
+            for end_point in  /data/local/.droidbox/{proc,sys,dev{/pts,},sdcard}
             do
               	sudo umount "${end_point}" &>/dev/null
                 if [[ $? != 0 ]]
@@ -47,8 +51,8 @@ then
                 fi
             done
 	fi
-        sudo rm -r  /data/local/.debian
-        rm $PREFIX/bin/droidbox 
+        sudo rm -r  /data/local/.droidbox
+        rm $PREFIX/bin/droidbox
 	echo "Done!"
 elif [ $1 = "--version" ]
 then
