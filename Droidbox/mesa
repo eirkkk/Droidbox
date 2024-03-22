@@ -1,21 +1,21 @@
 #!/bin/bash
 
-#dpkg --add-architecture i386
+dpkg --add-architecture i386
 
-#apt update
-#apt upgrade -y
-#apt build-dep mesa -y
+apt update
+apt upgrade -y
+apt build-dep mesa -y
 
-#apt install -y make cmake git wget vulkan-tools mesa-utils
-#apt install -y g++-multilib
-#apt install -y zlib1g-dev:i386 libexpat1-dev:i386 libdrm-dev:i386 libx11-dev:i386 libx11-xcb-dev:i386 libxext-dev:i386 libxdamage-dev:i386 libxcb-glx0-dev:i386 libxcb-dri2-0-dev:i386 libxcb-dri3-dev:i386 libxcb-shm0-dev:i386 libxcb-present-dev:i386 libxshmfence-dev:i386 libxxf86vm-dev:i386 libxrandr-dev:i386 libwayland-dev:i386 wayland-protocols:i386 libwayland-egl-backend-dev:i386 pkg-config:i386
+apt install -y make cmake git wget vulkan-tools mesa-utils
+apt install -y g++-multilib
+apt install -y zlib1g-dev:i386 libexpat1-dev:i386 libdrm-dev:i386 libx11-dev:i386 libx11-xcb-dev:i386 libxext-dev:i386 libxdamage-dev:i386 libxcb-glx0-dev:i386 libxcb-dri2-0-dev:i386 libxcb-dri3-dev:i386 libxcb-shm0-dev:i386 libxcb-present-dev:i386 libxshmfence-dev:i386 libxxf86vm-dev:i386 libxrandr-dev:i386 libwayland-dev:i386 wayland-protocols:i386 libwayland-egl-backend-dev:i386 pkg-config:i386
 
 # Download mesa
 BUILD_PREFIX=~/Desktop
 MESA_PREFIX=${BUILD_PREFIX}/mesa-23.2.1
 
-#wget --continue --directory-prefix ${BUILD_PREFIX} https://gitlab.freedesktop.org/mesa/mesa/-/archive/main/mesa-main.tar.gz
-#tar -xf ${BUILD_PREFIX}/*.tar.gz --directory ${BUILD_PREFIX}
+wget --continue --directory-prefix ${BUILD_PREFIX} https://archive.mesa3d.org/mesa-23.2.1.tar.xz
+tar -xf ${BUILD_PREFIX}/*.tar.gz --directory ${BUILD_PREFIX}
 
 # Set env var
 MESA_VER=$(cat ${MESA_PREFIX}/VERSION)
