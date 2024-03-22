@@ -1,0 +1,73 @@
+#!/bin/bash
+
+#dpkg --add-architecture i386
+
+#apt update
+#apt upgrade -y
+#apt build-dep mesa -y
+
+#apt install -y make cmake git wget vulkan-tools mesa-utils
+#apt install -y g++-multilib
+#apt install -y zlib1g-dev:i386 libexpat1-dev:i386 libdrm-dev:i386 libx11-dev:i386 libx11-xcb-dev:i386 libxext-dev:i386 libxdamage-dev:i386 libxcb-glx0-dev:i386 libxcb-dri2-0-dev:i386 libxcb-dri3-dev:i386 libxcb-shm0-dev:i386 libxcb-present-dev:i386 libxshmfence-dev:i386 libxxf86vm-dev:i386 libxrandr-dev:i386 libwayland-dev:i386 wayland-protocols:i386 libwayland-egl-backend-dev:i386 pkg-config:i386
+
+# Download mesa
+BUILD_PREFIX=~/Desktop
+MESA_PREFIX=${BUILD_PREFIX}/mesa-23.2.1
+
+#wget --continue --directory-prefix ${BUILD_PREFIX} https://gitlab.freedesktop.org/mesa/mesa/-/archive/main/mesa-main.tar.gz
+#tar -xf ${BUILD_PREFIX}/*.tar.gz --directory ${BUILD_PREFIX}
+
+# Set env var
+MESA_VER=$(cat ${MESA_PREFIX}/VERSION)
+DATE=$(date +"%F" | sed 's/-//g')
+
+MESA_AMD64=${BUILD_PREFIX}/mesa-vulkan-kgsl_${MESA_VER}-${DATE}_amd64
+MESA_I386=${BUILD_PREFIX}/mesa-vulkan-kgsl_${MESA_VER}-${DATE}_i386
+cd ${MESA_PREFIX}
+# Cross compile
+echo "\
+[binaries]
+c = 'gcc'
+cpp = 'g++'
+ar = 'ar'
+strip = 'strip'
+pkgconfig = 'pkg-config'
+
+[host_machine]
+system = 'linux'
+cpu_family = 'x86'
+cpu = 'x86_64'
+endian = 'little'
+" > ${MESA_PREFIX}/x86.txt
+
+meson build64/ --prefix /usr --libdir lib/x86_64-linux-gnu/ -D platforms=x11 -D gallium-drivers=freedreno -D vulkan-drivers=freedreno -D freedreno-kmds=kgsl -D dri3=enabled -D buildtype=release -D glx=disabled -D egl=disabled -D gles1=disabled -D gles2=disabled -D gallium-xa=disabled -D opengl=false -D shared-glapi=false -D b_lto=true -D b_ndebug=true -D cpp_rtti=false -D gbm=disabled -D llvm=disabled -D shared-llvm=disabled -D xmlconfig=disabled
+meson compile -C build64/
+meson install -C build64/ --destdir ${MESA_AMD64}
+
+meson build32/ --cross-file x86.txt --prefix /usr --libdir lib/i386-linux-gnu/ -D platforms=x11 -D gallium-drivers=freedreno -D vulkan-drivers=freedreno -D freedreno-kmds=kgsl -D dri3=enabled -D buildtype=release -D glx=disabled -D egl=disabled -D gles1=disabled -D gles2=disabled -D gallium-xa=disabled -D opengl=false -D shared-glapi=false -D b_lto=true -D b_ndebug=true -D cpp_rtti=false -D gbm=disabled -D llvm=disabled -D shared-llvm=disabled -D xmlconfig=disabled
+meson compile -C build32/
+meson install -C build32/ --destdir ${MESA_I386}
+
+# Build deb64
+cd ${BUILD_PREFIX}
+
+apt remove -y mesa-vulkan-drivers:amd64
+apt download mesa-vulkan-drivers:amd64
+dpkg-deb -e mesa-vulkan-drivers_*_amd64.deb ${MESA_AMD64}/DEBIAN/
+sed -ie "3s/.*/Version: ${MESA_VER}-${DATE}/g" ${MESA_AMD64}/DEBIAN/control
+rm mesa-vulkan-drivers_*_amd64.deb
+rm ${MESA_AMD64}/DEBIAN/md5sums ${MESA_AMD64}/DEBIAN/triggers
+rm -rf ${MESA_AMD64}/usr/share/drirc.d
+dpkg-deb --build --root-owner-group ${MESA_AMD64}
+
+# Build deb32
+cd ${BUILD_PREFIX}
+
+apt remove -y mesa-vulkan-drivers:i386
+apt download mesa-vulkan-drivers:i386
+dpkg-deb -e mesa-vulkan-drivers_*_i386.deb ${MESA_I386}/DEBIAN/
+sed -ie "3s/.*/Version: ${MESA_VER}-${DATE}/g" ${MESA_I386}/DEBIAN/control
+rm mesa-vulkan-drivers_*_i386.deb
+rm ${MESA_I386}/DEBIAN/md5sums ${MESA_I386}/DEBIAN/triggers
+rm -rf ${MESA_I386}/usr/share/drirc.d
+dpkg-deb --build --root-owner-group ${MESA_I386}
