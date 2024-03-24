@@ -37,7 +37,7 @@ pkgconfig = 'pkg-config'
 [host_machine]
 system = 'linux'
 cpu_family = 'x86'
-cpu = 'x86_64'
+cpu = 'i386'
 endian = 'little'
 " > ${MESA_PREFIX}/x86.txt
 
