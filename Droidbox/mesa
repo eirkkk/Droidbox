@@ -7,7 +7,7 @@ apt upgrade -y
 apt build-dep mesa -y
 
 apt install -y g++-multilib xz-utils make cmake git wget vulkan-tools mesa-utils
-apt install -y zlib1g-dev:i386 libexpat1-dev:i386 libdrm-dev:i386 libx11-dev:i386 libx11-xcb-dev:i386 libxext-dev:i386 libxdamage-dev:i386 libxcb-glx0-dev:i386 libxcb-dri2-0-dev:i386 libxcb-dri3-dev:i386 libxcb-shm0-dev:i386 libxcb-present-dev:i386 libxshmfence-dev:i386 libxxf86vm-dev:i386 libxrandr-dev:i386 libwayland-dev:i386 wayland-protocols:i386 libwayland-egl-backend-dev:i386 pkg-config:i386
+apt install -y zlib1g-dev:i386 libexpat1-dev:i386 libdrm-dev:i386 libx11-dev:i386 libx11-xcb-dev:i386 libxext-dev:i386 libxdamage-dev:i386 libxcb-glx0-dev:i386 libxcb-dri2-0-dev:i386 libxcb-dri3-dev:i386 libxcb-shm0-dev:i386 libxcb-present-dev:i386 libxshmfence-dev:i386 libxxf86vm-dev:i386 libxrandr-dev:i386 libwayland-dev:i386 wayland-protocols:i386 libwayland-egl-backend-dev:i386 
 
 cp /usr/include/libdrm/drm.h /usr/include/libdrm/drm_mode.h /usr/include/
 
@@ -37,7 +37,7 @@ pkgconfig = 'pkg-config'
 [host_machine]
 system = 'linux'
 cpu_family = 'x86'
-cpu = 'i386'
+cpu = 'i686'
 endian = 'little'
 " > ${MESA_PREFIX}/x86.txt
 
