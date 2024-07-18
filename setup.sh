@@ -47,9 +47,9 @@ if [ $version_choice -eq 1 ]; then
     chmod +x droidbox
     mv droidbox /data/data/com.termux/files/usr/bin/
    sudo  mkdir -p /data/local/.droidbox
-   wget -q https://cdimage.ubuntu.com/ubuntu-base/releases/23.10/release/ubuntu-base-23.10-base-arm64.tar.gz > /dev/null 2>&1
-   sudo tar -xf ubuntu-base-23.10-base-arm64.tar.gz -C /data/local/.droidbox
-   rm -rf ubuntu-base-23.10-base-arm64.tar.gz
+   wget -q https://cdimage.ubuntu.com/ubuntu-base/daily/current/oracular-base-arm64.tar.gz > /dev/null 2>&1
+   sudo tar -xf oracular-base-arm64.tar.gz -C /data/local/.droidbox
+   rm -rf oracular-base-arm64.tar.gz
    sudo mkdir -p /data/local/.droidbox/system
    sudo mkdir -p /data/local/.droidbox/data
    sudo mkdir -p /data/local/.droidbox/sdcard
